@@ -1,4 +1,4 @@
-# SFU-HUB-CMPT276
+# SFU HUB
 ## Description
 
 ## How It Works
