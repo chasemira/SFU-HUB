@@ -1,6 +1,6 @@
 # SFU HUB
 ## Description
--This project aims to develop a web based application called SFU HUB, which serves as a centralized platform for SFU students to access various resources and event information. 
+This project aims to develop a web based application called SFU HUB, which serves as a centralized platform for SFU students to access various resources and event information. 
 
 ## How It Works
 
