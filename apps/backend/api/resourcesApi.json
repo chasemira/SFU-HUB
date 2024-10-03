@@ -1,0 +1,159 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Resources API",
+      "description": "API that can redirect students to useful resources that SFU offers.",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/license/mit/"
+      },
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://sfuhub.ca",
+        "description": "Production"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Resources",
+        "description": "Endpoints related to resources"
+      }
+    ],
+    "paths": {
+      "/some/{someId}": {
+        "get": {
+          "tags": [
+            "Resources"
+          ],
+          "summary": "Get a specific resource",
+          "description": "Retrieve information about a resource by its ID",
+          "operationId": "getResource",
+          "parameters": [
+            {
+              "name": "resourceId",
+              "in": "path",
+              "description": "The Id of the resource",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Resource"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "The request has failed.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Problem"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "AccessToken": []
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Some": {
+          "required": [
+            "id",
+            "title",
+            "link"
+
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier" 
+            },
+            "title":{
+                "type": "string",
+                "description": "Title of the resource"
+            },
+            "description": {
+                "type": "string",
+                "description": "Description of the resource"
+            },
+            "link":{
+                "type": "string",
+                "description": "Link to the specific resource"
+            }
+          }
+        },
+        "Error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "integer",
+              "format": "int32",
+              "description": "The HTTP status code"
+            },
+            "message": {
+              "type": "string",
+              "description": "The error"
+            }
+          }
+        },
+        "Problem": {
+          "type": "object",
+          "description": "An HTTP Problem Details object, as defined in IETF RFC 7807 (https://tools.ietf.org/html/rfc7807).",
+          "required": [
+            "title",
+            "status"
+          ],
+          "properties": {
+            "detail": {
+              "type": "string",
+              "description": "The details of the problem"
+            },
+            "status": {
+              "type": "integer",
+              "description": "The HTTP status code"
+            },
+            "title": {
+              "type": "string",
+              "description": "The type of error (text)"
+            },
+            "type": {
+              "type": "string",
+              "description": "The type of error (URL)"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "AccessToken": {
+          "type": "http",
+          "scheme": "bearer"
+        }
+      }
+    }
+  }
