@@ -22,31 +22,21 @@
       }
     ],
     "paths": {
-      "/some/{someId}": {
+      "resources": {
         "get": {
           "tags": [
             "Resources"
           ],
-          "summary": "Get a specific resource",
-          "description": "Retrieve information about a resource by its ID",
+          "summary": "Get all resources",
+          "description": "Retrieve a list of all resources",
           "operationId": "getResource",
-          "parameters": [
-            {
-              "name": "resourceId",
-              "in": "path",
-              "description": "The Id of the resource",
-              "required": true,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
           "responses": {
             "200": {
               "description": "Successful operation",
               "content": {
                 "application/json": {
                   "schema": {
+                    "type": "array",
                     "$ref": "#/components/schemas/Resource"
                   }
                 }
@@ -78,11 +68,12 @@
     },
     "components": {
       "schemas": {
-        "Some": {
+        "Resources": {
           "required": [
             "id",
             "title",
-            "link"
+            "link",
+            "category"
 
           ],
           "properties": {
@@ -91,16 +82,20 @@
               "description": "Unique identifier" 
             },
             "title":{
-                "type": "string",
-                "description": "Title of the resource"
+              "type": "string",
+              "description": "Title of the resource"
             },
             "description": {
-                "type": "string",
-                "description": "Description of the resource"
+              "type": "string",
+              "description": "Description of the resource"
             },
             "link":{
-                "type": "string",
-                "description": "Link to the specific resource"
+              "type": "string",
+              "description": "Link to the specific resource"
+            },
+            "category": {
+              "type": "string",
+              "description": "Category of the resource"
             }
           }
         },
