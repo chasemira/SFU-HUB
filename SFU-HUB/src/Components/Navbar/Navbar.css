@@ -4,8 +4,9 @@
     background-color: rgb(166, 25, 46);
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
+    padding-right: 20px;
   }
   
   .menu-bars {
@@ -22,12 +23,12 @@
     justify-content: center;
     position: fixed;
     top: 0;
-    left: -100%;
+    right: -100%;
     transition: 850ms;
   }
   
   .nav-menu.active {
-    left: 0;
+    right: 0;
     transition: 350ms;
   }
   
@@ -66,8 +67,9 @@
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
+    padding-right: 20px;
   }
   
   span {
