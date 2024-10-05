@@ -1,7 +1,7 @@
 
 
 .navbar {
-    background-color: #060b26;
+    background-color: rgb(166, 25, 46);
     height: 80px;
     display: flex;
     justify-content: start;
@@ -15,7 +15,7 @@
   }
   
   .nav-menu {
-    background-color: #060b26;
+    background-color: rgb(166, 25, 46);
     width: 250px;
     height: 100vh;
     display: flex;
@@ -50,10 +50,11 @@
     align-items: center;
     padding: 0 16px;
     border-radius: 4px;
+
   }
   
   .nav-text a:hover {
-    background-color: #1a83ff;
+    background-color: rgb(204, 6, 51)
   }
   
   .nav-menu-items {
@@ -61,7 +62,7 @@
   }
   
   .navbar-toggle {
-    background-color: #060b26;
+    background-color: rgb(166, 25, 46);
     width: 100%;
     height: 80px;
     display: flex;
