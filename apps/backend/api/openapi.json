@@ -1,43 +1,53 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Some Template",
-    "description": "some thing",
+    "title": "SFU HUB",
     "license": {
       "name": "MIT",
       "url": "https://opensource.org/license/mit/"
     },
-    "version": "1.0.0"
+    "version": "0.1.0"
   },
   "servers": [
     {
-      "url": "https://sfuhub.ca",
+      "url": "https://api.sfuhub.ca",
       "description": "Production"
     }
   ],
   "tags": [
     {
-      "name": "Something",
-      "description": "Some"
+      "name": "Calendar",
+      "description": "A schedule of events from SFU, SFSS, clubs, fraternities, and other groups"
     }
   ],
   "paths": {
-    "/some/{someId}": {
+    "/calendar/events": {
       "get": {
         "tags": [
-          "Some"
+          "Calendar"
         ],
-        "summary": "Get a some",
-        "description": "Get a some",
-        "operationId": "getSome",
+        "summary": "Feed of calendar events",
+        "description": "Returns a calendar feed with a subset of the format of https://fullcalendar.io/docs/event-object",
+        "operationId": "getEvents",
         "parameters": [
           {
-            "name": "someId",
-            "in": "path",
-            "description": "The Id of the some",
-            "required": true,
+            "name": "start",
+            "in": "query",
+            "description": "Filters to events that start after this date",
+            "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Filters to events that end before this date",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
             }
           }
         ],
@@ -47,7 +57,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Some"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
                 }
               }
             }
@@ -78,12 +91,35 @@
   },
   "components": {
     "schemas": {
-      "Some": {
+      "Event": {
         "required": [
-          "id"
+          "id",
+          "start",
+          "end",
+          "title"
         ],
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "allDay": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "color": {
             "type": "string"
           }
         }
