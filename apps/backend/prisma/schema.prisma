@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,6 +6,11 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
-model Some {
-  id String @id @unique @default(uuid())
+
+model resources {
+  id          String @unique(map: "sqlite_autoindex_resources_1")
+  title       String @unique(map: "sqlite_autoindex_resources_2")
+  description String @unique(map: "sqlite_autoindex_resources_3")
+  link        String @unique(map: "sqlite_autoindex_resources_4")
+  category    String @unique(map: "sqlite_autoindex_resources_5")
 }
