@@ -2,6 +2,8 @@ import cors from 'cors';
 import express, { type ErrorRequestHandler } from 'express';
 import swaggerUi, { type JsonObject } from 'swagger-ui-express';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import * as OpenApiValidator from 'express-openapi-validator';
 import someRoute from './routes/someRoute.js';
 
@@ -20,7 +22,10 @@ app.use(
     swaggerUi.serve,
     swaggerUi.setup(JSON.parse(openApiDocument) as JsonObject),
 );
-app.get('/openapi', (_req, res) => res.sendFile('../api/openapi.json'));
+
+app.get('/openapi', (_req, res) => res.sendFile('../api/openapi.json', {
+    root: dirname(fileURLToPath(import.meta.url)),
+}));
 
 app.use(
     OpenApiValidator.middleware({
@@ -33,6 +38,7 @@ app.use(
 
 app.use('/someRoute', someRoute);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use(((err, _req, res, _next) => {
     // format error
     res.status((err.status as number) || 500).json({
