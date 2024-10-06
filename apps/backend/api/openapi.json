@@ -18,6 +18,10 @@
     {
       "name": "Calendar",
       "description": "A schedule of events from SFU, SFSS, clubs, fraternities, and other groups"
+    },
+    {
+      "name": "Resources",
+      "description": "Endpoints related to resources"
     }
   ],
   "paths": {
@@ -87,6 +91,51 @@
           }
         ]
       }
+    },
+    "/resources": {
+      "get": {
+        "tags": [
+          "Resources"
+        ],
+        "summary": "Get all resources",
+        "description": "Retrieve a list of all resources",
+        "operationId": "getResources",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Resource"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "AccessToken": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -121,6 +170,36 @@
           },
           "color": {
             "type": "string"
+          }
+        }
+      },
+      "Resource": {
+        "required": [
+          "id",
+          "title",
+          "link",
+          "category"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the resource"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the resource"
+          },
+          "link": {
+            "type": "string",
+            "description": "Link to the specific resource"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category of the resource"
           }
         }
       },
