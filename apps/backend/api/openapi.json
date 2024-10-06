@@ -194,7 +194,7 @@
   },
   "components": {
     "schemas": {
-        "EventPost": {
+      "EventPost": {
         "required": [
           "start",
           "end",
