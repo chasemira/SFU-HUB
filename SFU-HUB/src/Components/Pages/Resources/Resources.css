@@ -1,0 +1,70 @@
+/* Main container for the Resources page */
+.resources-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  /* Search bar styles */
+  #searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Dropdown category filter styles */
+  #categoryFilter {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Resources list styles */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hover effect for resource items */
+  li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Style for no results message */
+  li.no-results {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
+  
