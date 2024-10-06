@@ -33,7 +33,7 @@ app.use(
 
 app.use('/someRoute', someRoute);
 
-app.use(((err, _req, res) => {
+app.use(((err, _req, res, _next) => {
     // format error
     res.status((err.status as number) || 500).json({
         message: err.message,
