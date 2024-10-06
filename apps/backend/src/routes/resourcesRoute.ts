@@ -1,9 +1,9 @@
 import express from 'express';
-import someController from '../controllers/someController.js';
+import resourcesController from '../controllers/resourcesController.js';
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.get('/:someId', someController.getSome);
+router.get('/', resourcesController.getResources);
 
 export default router;

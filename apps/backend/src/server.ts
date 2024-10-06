@@ -5,7 +5,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import * as OpenApiValidator from 'express-openapi-validator';
-import someRoute from './routes/someRoute.js';
+import router from './routes/resourcesRoute.js';
 
 // import { jwtDecode } from "jwt-decode";
 
@@ -36,7 +36,6 @@ app.use(
     }),
 );
 
-app.use('/someRoute', someRoute);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use(((err, _req, res, _next) => {
