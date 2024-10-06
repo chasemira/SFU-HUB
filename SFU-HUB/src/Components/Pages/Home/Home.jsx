@@ -11,9 +11,9 @@ function Home() {
         <h1>testing </h1>
         <h1>this is where the hero section will be later</h1>
         <p>ur one stop hub for all things sfu</p>
+        
       </section>
 
-      
       {/*calendar section*/}
       <section className='calendar-section'>
         <Calendar />
