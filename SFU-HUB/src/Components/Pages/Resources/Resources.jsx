@@ -27,20 +27,26 @@ const Resources = () => {
   });
 
   return (
-    <div className="resources-container">
-      <h1>SFU Resources</h1>
+    <div className="resources__container">
+      <h1 className="resources__header">SFU Resources</h1>
 
       <label htmlFor="searchBar">Search Resources:</label>
       <input
         type="text"
         id="searchBar"
+        className="resources__search-bar"
         placeholder="Search resources..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
       <label htmlFor="categoryFilter">Select Category:</label>
-      <select id="categoryFilter" value={category} onChange={(e) => setCategory(e.target.value)}>
+      <select
+        id="categoryFilter"
+        className="resources__category-filter"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      >
         <option value="all">All Categories</option>
         <option value="health">Health</option>
         <option value="academics">Academics</option>
@@ -48,17 +54,17 @@ const Resources = () => {
         <option value="safety">Safety</option>
       </select>
 
-      <ul id="resourcesList">
+      <ul className="resources__list">
         {filteredResources.length > 0 ? (
           filteredResources.map((resource) => (
-            <li key={resource.name} data-category={resource.category}>
+            <li key={resource.name} className="resources__item" data-category={resource.category}>
               <a href={resource.link} target="_blank" rel="noopener noreferrer">
                 {resource.name}
               </a>
             </li>
           ))
         ) : (
-          <li className="no-results">No resources found for "{searchTerm}". Try searching with a different keyword.</li>
+          <li className="resources__no-results">No resources found for "{searchTerm}". Try searching with a different keyword.</li>
         )}
       </ul>
     </div>
