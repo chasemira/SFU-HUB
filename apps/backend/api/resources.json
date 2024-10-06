@@ -22,14 +22,14 @@
       }
     ],
     "paths": {
-      "resources": {
+      "/resources": {
         "get": {
           "tags": [
             "Resources"
           ],
           "summary": "Get all resources",
           "description": "Retrieve a list of all resources",
-          "operationId": "getResource",
+          "operationId": "getResources",
           "responses": {
             "200": {
               "description": "Successful operation",
@@ -37,7 +37,9 @@
                 "application/json": {
                   "schema": {
                     "type": "array",
+                    "items":{
                     "$ref": "#/components/schemas/Resource"
+                    }
                   }
                 }
               }
@@ -68,7 +70,7 @@
     },
     "components": {
       "schemas": {
-        "Resources": {
+        "Resource": {
           "required": [
             "id",
             "title",
