@@ -6,6 +6,7 @@
         "build": "tsc",
         "test:types": "tsc --noEmit",
         "lint": "eslint \"src/**/*.ts\"",
+        "prestart": "npm run build",
         "start": "node dist/server.js",
         "postinstall": "npm run generate:prisma",
         "generate:prisma": "prisma generate",
