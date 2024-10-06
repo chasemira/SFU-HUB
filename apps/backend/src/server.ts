@@ -6,7 +6,6 @@ import * as OpenApiValidator from 'express-openapi-validator';
 import someRoute from './routes/someRoute.js';
 
 // import { jwtDecode } from "jwt-decode";
-// import { type UserInfoJwt } from "@aleasat/types";
 
 const app = express();
 const port = process.env['PORT'] ?? 3005;
