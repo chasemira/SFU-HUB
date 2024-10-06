@@ -5,7 +5,8 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import * as OpenApiValidator from 'express-openapi-validator';
-import router from './routes/resourcesRoute.js';
+import resourcesRoute from './routes/resourcesRoute.js';
+import calendarRoute from './routes/calendarRoute.js';
 
 // import { jwtDecode } from "jwt-decode";
 
@@ -36,6 +37,8 @@ app.use(
     }),
 );
 
+app.use('/calendar', calendarRoute);
+app.use('/resources', resourcesRoute);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use(((err, _req, res, _next) => {
