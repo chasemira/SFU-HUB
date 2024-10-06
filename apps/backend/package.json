@@ -6,7 +6,8 @@
         "build": "tsc",
         "test:types": "tsc --noEmit",
         "lint": "eslint \"src/**/*.ts\"",
-        "start": "node dist/src/server.js",
+        "prestart": "npm run build",
+        "start": "node dist/server.js",
         "postinstall": "npm run generate:prisma",
         "generate:prisma": "prisma generate",
         "generate:openapi": "openapi-typescript ./api/openapi.json -o ./src/@types/openapi.d.ts"
@@ -16,7 +17,7 @@
         "@tsconfig/strictest": "^2.0.5",
         "cors": "^2.8.5",
         "express": "^4.18.2",
-        "express-openapi-validator": "^4.13.8",
+        "express-openapi-validator": "^5.3.7",
         "prisma": "^5.9.1",
         "swagger-ui-express": "^5.0.0"
     },

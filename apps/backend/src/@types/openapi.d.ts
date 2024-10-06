@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-    '/some/{someId}': {
+    "/calendar/events": {
         parameters: {
             query?: never;
             header?: never;
@@ -12,10 +12,30 @@ export interface paths {
             cookie?: never;
         };
         /**
-         * Get a some
-         * @description Get a some
+         * Feed of calendar events
+         * @description Returns a calendar feed with a subset of the format of https://fullcalendar.io/docs/event-object
          */
-        get: operations['getSome'];
+        get: operations["getEvents"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/resources": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get all resources
+         * @description Retrieve a list of all resources
+         */
+        get: operations["getResources"];
         put?: never;
         post?: never;
         delete?: never;
@@ -28,8 +48,28 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        Some: {
+        Event: {
             id: string;
+            allDay?: boolean;
+            /** Format: date-time */
+            start: string;
+            /** Format: date-time */
+            end: string;
+            title: string;
+            url?: string;
+            color?: string;
+        };
+        Resource: {
+            /** @description Unique identifier */
+            id: string;
+            /** @description Title of the resource */
+            title: string;
+            /** @description Description of the resource */
+            description?: string;
+            /** @description Link to the specific resource */
+            link: string;
+            /** @description Category of the resource */
+            category: string;
         };
         Error: {
             /**
@@ -60,14 +100,16 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    getSome: {
+    getEvents: {
         parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description The Id of the some */
-                someId: string;
+            query?: {
+                /** @description Filters to events that start after this date */
+                start?: string;
+                /** @description Filters to events that end before this date */
+                end?: string;
             };
+            header?: never;
+            path?: never;
             cookie?: never;
         };
         requestBody?: never;
@@ -78,7 +120,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    'application/json': components['schemas']['Some'];
+                    "application/json": components["schemas"]["Event"][];
                 };
             };
             /** @description The request has failed. */
@@ -87,8 +129,38 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    'application/json': components['schemas']['Error'];
-                    'application/problem+json': components['schemas']['Problem'];
+                    "application/json": components["schemas"]["Error"];
+                    "application/problem+json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    getResources: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful operation */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Resource"][];
+                };
+            };
+            /** @description The request has failed. */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Error"];
+                    "application/problem+json": components["schemas"]["Problem"];
                 };
             };
         };
