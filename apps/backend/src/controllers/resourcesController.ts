@@ -6,12 +6,10 @@ const getResources = async (
     _req: OperationsRequest<'getResources'>,
     res: Response,
 ): Promise<void> => {
-
     // Calling the service
     const resources = await resourcesService.getEvents();
 
     res.status(200).json(resources);
-
 };
 
 export default {

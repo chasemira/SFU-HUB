@@ -1,17 +1,13 @@
 import { type components } from '../@types/openapi';
 import { prisma } from '../repositories/prisma.js';
 
-const getEvents = async (
-    
-): Promise<components['schemas']['Resource'][]> => {
-
+const getEvents = async (): Promise<components['schemas']['Resource'][]> => {
     const resources = await prisma.resources.findMany({
-        select:{
+        select: {
             title: true,
             description: true,
             link: true,
             category: true,
-
         },
     });
 
@@ -19,5 +15,5 @@ const getEvents = async (
 };
 
 export default {
-    getEvents,
+    getEvents: getEvents,
 };
