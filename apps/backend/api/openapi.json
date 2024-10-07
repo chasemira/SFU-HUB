@@ -30,7 +30,7 @@
         "tags": [
           "Calendar"
         ],
-        "summary": "Feed of calendar events",
+        "summary": "Get a feed of calendar events",
         "description": "Returns a calendar feed with a subset of the format of https://fullcalendar.io/docs/event-object",
         "operationId": "getEvents",
         "parameters": [
@@ -55,6 +55,60 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "AccessToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Add a calendar event",
+        "description": "Adds a calendar event of the format of https://fullcalendar.io/docs/event-object",
+        "operationId": "postEvent",
+        "requestBody": {
+          "description": "The event",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventPost"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful operation",
@@ -140,6 +194,38 @@
   },
   "components": {
     "schemas": {
+      "EventPost": {
+        "required": [
+          "start",
+          "end",
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "allDay": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        }
+      },
       "Event": {
         "required": [
           "id",

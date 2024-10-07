@@ -12,12 +12,16 @@ export interface paths {
             cookie?: never;
         };
         /**
-         * Feed of calendar events
+         * Get a feed of calendar events
          * @description Returns a calendar feed with a subset of the format of https://fullcalendar.io/docs/event-object
          */
         get: operations["getEvents"];
         put?: never;
-        post?: never;
+        /**
+         * Add a calendar event
+         * @description Adds a calendar event of the format of https://fullcalendar.io/docs/event-object
+         */
+        post: operations["postEvent"];
         delete?: never;
         options?: never;
         head?: never;
@@ -48,6 +52,17 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        EventPost: {
+            id?: string;
+            allDay?: boolean;
+            /** Format: date-time */
+            start: string;
+            /** Format: date-time */
+            end: string;
+            title: string;
+            url?: string;
+            color?: string;
+        };
         Event: {
             id: string;
             allDay?: boolean;
@@ -113,6 +128,41 @@ export interface operations {
             cookie?: never;
         };
         requestBody?: never;
+        responses: {
+            /** @description Successful operation */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Event"][];
+                };
+            };
+            /** @description The request has failed. */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Error"];
+                    "application/problem+json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    postEvent: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description The event */
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["EventPost"];
+            };
+        };
         responses: {
             /** @description Successful operation */
             200: {
