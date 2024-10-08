@@ -23,7 +23,7 @@ SFU HUB aggregates information from various capus resources and presents it in a
 
 ## Tests
 
-## Test Cases for Resources Component
+### Test Cases for Resources Component
 The test cases for the `Resources` component along with the results of each test.
 
 1. Search Functionality: 
