@@ -25,11 +25,12 @@ SFU HUB aggregates information from various capus resources and presents it in a
 
 ## Test Cases for Resources Component
 The test cases for the `Resources` component along with the results of each test.
+
 1. Component Rendering: 
    Steps: Open the application. 
-   Expectted Result: The title and components are visible. 
+   Expected Result: The title and components are visible. 
    Actual Result: The title and components are visible. 
-   Pass/Fail: Pass
+   **Pass**
 
 2. Search Functionality: 
    Steps: Search for "Health." 
