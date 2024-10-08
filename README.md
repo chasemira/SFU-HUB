@@ -36,31 +36,30 @@ The test cases for the `Resources` component along with the results of each test
    Steps: Search for "Health." 
    Expected Result: Displays relevant resources. 
    Actual Result: Displays relevant resources. 
-   Pass/Fail: Pass
+   **Pass**
 
 3. No Results Handling: 
    Steps: Search for a nonexistent Resource. I searched for "Nonexistent"
    Expected Result: Shows an error message. 
    Actual Result: Shows an error message. 
-   Pass/Fail: Pass
+   **Pass**
 
 4. Category Filtering: 
    Steps: Filter by "Health." 
    Expected Result: Displays only health resources. Shows SFU Mental Health Support and SFU Health and Counselling
    Actual Result: Displays only health resources. 
-   Pass/Fail: Pass
+   **Pass**
 
 5. Clear Search: 
    Steps: Clear the search input. 
    Expected Result: All resources are displayed. 
    Actual Result: All resources are displayed. 
-   Pass/Fail: Pass
+   **Pass**
 
 6. Open Resource Links: 
    Steps: Click on a resource link. 
    Expected Result: Navigates to the correct URL. 
    Actual Result: Navigates to the correct URL. 
-   Pass/Fail: Pass
+   **Pass**
 
-## Summary
 The manual testing for the resources page was successful, with all test cases passing.
