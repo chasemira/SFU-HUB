@@ -5,7 +5,7 @@
     justify-content: end;
     align-items: center;
     padding-right: 20px;
-    z-index: 10; /* Ensure the navbar is on top */
+    z-index: 10;
   }
   
   .menu-bars {
@@ -24,7 +24,7 @@
     top: 0;
     right: -100%;
     transition: 850ms;
-    z-index: 100; /* Make sure it’s on top of other content */
+    z-index: 100;
   }
   
   .nav-menu.active {
