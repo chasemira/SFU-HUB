@@ -1,12 +1,11 @@
-
-
 .navbar {
     background-color: rgb(166, 25, 46);
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: end;
     align-items: center;
     padding-right: 20px;
+    z-index: 10; /* Ensure the navbar is on top */
   }
   
   .menu-bars {
@@ -19,12 +18,13 @@
     background-color: rgb(166, 25, 46);
     width: 250px;
     height: 100vh;
-    display: flex;
+    display: flex; 
     justify-content: center;
     position: fixed;
     top: 0;
     right: -100%;
     transition: 850ms;
+    z-index: 100; /* Make sure it’s on top of other content */
   }
   
   .nav-menu.active {

@@ -1,9 +1,9 @@
 import React from "react";
+import './calendar.css'; 
 import Fullcalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import './calendar.css'; 
 
 function Calendar() {
   return (
@@ -22,4 +22,4 @@ function Calendar() {
   );
 }
 
-export default Calendar
+export default Calendar;
