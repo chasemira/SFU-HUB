@@ -1,19 +1,43 @@
 import React from "react";
 import Calendar from "./calendar";
-import './Home.css'; 
+import './Home.css';
 
 function Home() {
   return (
     <div>
-      {/*home section*/}
-      <section className='hero'>
-        <h1>welcome to sfu hub</h1>
-        <h1>testing </h1>
-        <h1>this is where the hero section will be later</h1>
-        <p>ur one stop hub for all things sfu</p>
-        
+      {/* hero section */}
+      <section className="hero">
+        <div className="hero-image"></div> {/* Image container */}
+        <div className="hero-text">
+          <h1>SFU HUB</h1>
+          <p>Your central hub for all things SFU</p>
+        </div>
       </section>
-
+      
+      {/* image grid */}
+      <section className="image-grid">
+        <div className="grid-item">
+          <a href="#page1">
+            <div className="image-placeholder">Image 1</div>
+          </a>
+        </div>
+        <div className="grid-item">
+          <a href="#page2">
+            <div className="image-placeholder">Image 2</div>
+          </a>
+        </div>
+        <div className="grid-item">
+          <a href="#page3">
+            <div className="image-placeholder">Image 3</div>
+          </a>
+        </div>
+        <div className="grid-item">
+          <a href="#page4">
+            <div className="image-placeholder">Image 4</div>
+          </a>
+        </div>
+      </section>
+      
       {/*calendar section*/}
       <section className='calendar-section'>
         <Calendar />
