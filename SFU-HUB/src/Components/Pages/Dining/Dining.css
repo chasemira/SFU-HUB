@@ -1,0 +1,48 @@
+.dining {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dining_header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dining_content{
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Location Selector Section */
+.location_selector h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.location_selector{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location_selector select:focus {
+  outline: none;
+  border-color: #d42d2b;
+  box-shadow: 0 0 5px rgba(212, 45, 43, 0.5);
+}
+
+.location_details a {
+  color: #d42d2b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.location_details a:hover {
+  text-decoration: underline;
+}

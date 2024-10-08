@@ -1,6 +1,5 @@
 /* Main container for the Resources page */
 .resources__container {
-  font-family: Arial, sans-serif;
   padding: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -9,10 +8,11 @@
 .resources__header {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 2em;
-  color: #333;
 }
 
+.resources, h2{
+  color: rgb(166, 25, 46);
+}
 /* Search bar styles */
 .resources__search-bar {
   width: 100%;
@@ -60,7 +60,6 @@
 .resources__item a {
   display: block;
   padding: 20px;
-  font-size: 1.2em;
   font-weight: 600;
   text-decoration: none;
   color: black;
