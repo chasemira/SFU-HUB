@@ -7,10 +7,7 @@ function Home() {
     <div>
       {/*home section*/}
       <section className='hero'>
-        <h1>welcome to sfu hub</h1>
-        <h1>testing </h1>
-        <h1>this is where the hero section will be later</h1>
-        <p>ur one stop hub for all things sfu</p>
+        <h1>SFU HUB</h1>
       </section>
 
       

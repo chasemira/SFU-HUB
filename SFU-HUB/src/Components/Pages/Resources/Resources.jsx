@@ -18,6 +18,8 @@ const Resources = () => {
     { name: 'SFU Learning Commons - Proofreading Support', link: 'https://www.lib.sfu.ca/about/branches-depts/slc/writing/revising', category: 'academics' },
     { name: 'SFU Learning Commons - Time Management Support', link: 'https://www.lib.sfu.ca/about/branches-depts/slc/learning/time-management/fifteen-time-management-strategies', category: 'academics' },
     { name: 'SFU Library - Equipment Borrowing', link: 'https://www.lib.sfu.ca/borrow/equipment/list', category: 'academics' },
+    { name: 'Career and Volunteer Services', link: 'https://www.sfu.ca/students/career.html', category: 'academics' },
+    { name: 'Student Computer Labs', link: 'https://sfu.teamdynamix.com/TDClient/255/ITServices/KB/?CategoryID=902', category: 'academics'},
   ];
 
   const filteredResources = resources.filter((resource) => {
