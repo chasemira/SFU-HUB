@@ -67,11 +67,7 @@ SFU HUB aggregates information from various capus resources and presents it in a
 ## USAGE
 
 Run Dev to start and visit the localhost. Follow the steps as shown in the video below.
-
-[![SFU HUB Usage](![image](https://media.github.sfu.ca/user/3090/files/842e7fce-dde1-4207-a109-0b0ddb09ff6e))](https://media.github.sfu.ca/user/3090/files/5503c901-0bad-43e0-b92b-15feff31e2b3)
-
-
-
+![video](https://media.github.sfu.ca/user/3090/files/5c78afee-4d88-4774-8dcc-42f0f510c780)
 
 ## FEATURE TRACKING
 ![image](https://media.github.sfu.ca/user/3090/files/a6237c7e-5cff-41cd-9aab-77c83984bdc7)
@@ -127,3 +123,28 @@ The manual testing for the resources page was successful, with all test cases pa
    Exoected Results: No results
    Actual Result: No dining option is displayed. Should consider adding an 'Oops..' message for the next iteration.
    **PASS**
+   
+## Testing
+
+We implemented unit tests for the **Home Component** using **React Testing Library** and **Jest**. The tests cover rendering and verifying essential sections of the `Home` component, such as the **hero section**, **image grid**, and the **calendar section**.
+
+### Test Cases for Home and Calendar Components 
+
+1. **Hero Section Rendering**  
+   - **Test:** Ensure that the hero section renders the correct title and text.  
+   - **What it checks:**  
+     - Verifies that the `SFU HUB` title is rendered.
+     - Verifies that the text `Your central hub for all things SFU` is rendered.
+
+2. **Image Grid Rendering**  
+   - **Test:** Ensure that the image grid renders the correct items for `Dining`, `Resources`, `Transportation`, and `Blogs`.  
+   - **What it checks:**  
+     - Verifies that the text links for `DINING`, `RESOURCES`, `TRANSPORTATION`, and `BLOGS` are rendered.
+
+3. **Calendar Section Rendering**  
+   - **Test:** Ensure that the Calendar component is rendered correctly.  
+   - **What it checks:**  
+     - Mocked the `Calendar` component and verified that it is rendered with the placeholder text `Mocked Calendar`.
+
+### Test Results
+
