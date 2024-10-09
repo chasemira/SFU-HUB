@@ -1,4 +1,4 @@
-/* general Page Styling */
+/* General Page Styling */
 body, html {
   margin: 0;
   padding: 0;
@@ -25,16 +25,16 @@ body, html {
   background-image: url('https://www.sfu.ca/content/sfu/main/jcr:content/main_content/textimage_12616661/image.img.1280.high.png/1724772825036.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.7; /* Apply opacity only to the image */
+  opacity: 0.65; /* Apply opacity only to the image */
   z-index: 1; /* Behind the text */
 }
 
 .hero-text {
   position: relative;
   z-index: 2; /* Ensure text appears above the image */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(168, 23, 45, 0.3);
   color: white;
-  padding: 20px;
+  padding: 80px;
   text-align: center;
   border-radius: 8px;
 }
@@ -49,18 +49,18 @@ body, html {
   margin: 0;
 }
 
-
-/* image grid */
+/* Image Grid */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  padding: 2rem;
-  max-width: 1200px;
+  grid-gap: 30px;
+  padding: 4rem;
+  max-width: 98%;
   margin: 0 auto;
 }
 
 .grid-item {
+  position: relative; /* Ensure the text container is positioned relative to the image */
   background-color: #f4f4f4;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -69,14 +69,44 @@ body, html {
   cursor: pointer;
 }
 
-.image-placeholder {
-  height: 200px;
+.image1, .image2, .image3, .image4 {
+  height: 230px;
+  background-size: cover; /* ensures the image covers the entire div */
+  background-position: center; /* centers the image */
+  opacity: 0.5;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  color: #666;
-  background-color: #ccc;
+}
+
+.image1 {
+  height: 250px;
+}
+
+.grid-item:hover .image1,
+.grid-item:hover .image2,
+.grid-item:hover .image3,
+.grid-item:hover .image4 {
+  transform: scale(1.05); /* Slightly scale up the image */
+  opacity: 0.8; /* Increase opacity */
+}
+
+.image1, .image2, .image3, .image4 {
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
+}
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(166, 25, 46); /* Red footer banner */
+  color: white; /* White text */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  padding: 3px 10px;
+  box-sizing: border-box;
+  z-index: 2; /* Ensure the text is above the image */
 }
 
 .grid-item a {
