@@ -102,3 +102,21 @@ The test cases for the `Resources` component along with the results of each test
    **Pass**
 
 The manual testing for the resources page was successful, with all test cases passing.
+
+### Test Cases for Dining Component
+
+1. All Locations Displayes: 
+   Steps: Filter by 'All Locations'
+   Expected Result: Displays all the dining options available on campus ((only the ones put in the database currently).
+   Actual Result: Displays all the dining options available on campus.
+   **PASS**
+3. Location Filtering:
+   Steps: Filter by 'Cornerstone'
+   Expected Result: Displays all the Restaurants at Cornerstone
+   Actual Result: Displays only the dining options available at Cornerstone (only the ones put in the database currently).
+   **PASS**
+2. No Dining Options:
+   Steps: Filter by 'Univercity' (As there are no dining options added there currently)
+   Exoected Results: No results
+   Actual Result: No dining option is displayed. Should consider adding an 'Oops..' message for the next iteration.
+   **PASS**
