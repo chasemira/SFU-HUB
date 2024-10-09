@@ -7,6 +7,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model event {
+  id String @id @unique @default(uuid())
+  allDay Boolean?
+  start DateTime
+  end DateTime
+  title String
+  url String?
+  color String?
+}
+
 model resources {
   id          String @id
   title       String
