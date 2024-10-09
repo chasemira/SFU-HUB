@@ -13,6 +13,7 @@ model resources {
   description String
   link        String
   category    String
+}
 
 model dining {
   id          String   @id @default(uuid())
