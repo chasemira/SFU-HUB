@@ -64,10 +64,10 @@ SFU HUB aggregates information from various capus resources and presents it in a
 
 ## REQUIREMENTS
 ### Calendar: 
--Display events: a basic monthly calendar view with events from SFU and student clubs 
--Event details: when the user clicks on an event, display more info (name, date, time, location, etc) 
--Basic filtering: A filter option for the clubs that saves to cookies or local storage 
--Responsive design: ensure the calendar works across devices (phone, desktop, tablet) 
+- Display events: a basic monthly calendar view with events from SFU and student clubs 
+- Event details: when the user clicks on an event, display more info (name, date, time, location, etc) 
+- Basic filtering: A filter option for the clubs that saves to cookies or local storage 
+- Responsive design: ensure the calendar works across devices (phone, desktop, tablet) 
 
 ### Dining page 
 -List dining options: display a list of all on-campus dining locations (cafes, restaurants, food trucks) 
