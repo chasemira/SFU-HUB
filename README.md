@@ -20,8 +20,6 @@ SFU HUB aggregates information from various capus resources and presents it in a
 #### Version Control:
 - We successfully used `Git` and `GitHub` for version control, ensuring smooth collaboration with no conflicts.
 - The use of branches and issued helped keep our work organized and smooth distribution of tasks.
-![image](https://media.github.sfu.ca/user/3090/files/a6237c7e-5cff-41cd-9aab-77c83984bdc7)
-![image](https://media.github.sfu.ca/user/3090/files/0b05ca28-5ec8-4992-8d27-e82eb7f928c3)
 
 
 #### Agile Adoption:
@@ -68,7 +66,12 @@ SFU HUB aggregates information from various capus resources and presents it in a
 
 ## USAGE
 
+Run Dev to start and visit the localhost. Follow the steps as shown in the video below.
+![video](https://media.github.sfu.ca/user/3090/files/5c78afee-4d88-4774-8dcc-42f0f510c780)
+
 ## FEATURE TRACKING
+![image](https://media.github.sfu.ca/user/3090/files/a6237c7e-5cff-41cd-9aab-77c83984bdc7)
+![image](https://media.github.sfu.ca/user/3090/files/0b05ca28-5ec8-4992-8d27-e82eb7f928c3)
 
 ## TESTS
 
