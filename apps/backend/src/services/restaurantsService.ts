@@ -1,7 +1,7 @@
 import { type components } from '../@types/openapi.js';
 import { prisma } from '../repositories/prisma.js';
 
-const getRestaurants = async (): Promise<components['schemas']['Dining'][]> => {
+const getRestaurants = async (): Promise<components['schemas']['Restaurants'][]> => {
     const dining = await prisma.dining.findMany({
         select: {
             name: true,
@@ -13,7 +13,7 @@ const getRestaurants = async (): Promise<components['schemas']['Dining'][]> => {
         },
     });
 
-    return dining as components['schemas']['Dining'][];
+    return dining as components['schemas']['Restaurants'][];
 };
 
 export default {

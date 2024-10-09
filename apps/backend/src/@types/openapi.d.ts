@@ -106,7 +106,7 @@ export interface components {
             /** @description Category of the resource */
             category: string;
         };
-        Dining: {
+        Restaurants: {
             /** @description Unique identifier */
             id: string;
             /** @description Name of the dining option */
@@ -240,7 +240,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["Dining"][];
+                    "application/json": components["schemas"]["Restaurants"][];
                 };
             };
             /** @description The request has failed. */

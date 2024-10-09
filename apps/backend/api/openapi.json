@@ -166,7 +166,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Dining"
+                    "$ref": "#/components/schemas/Restaurants"
                   }
                 }
               }
@@ -338,7 +338,7 @@
           }
         }
       },
-      "Dining": {
+      "Restaurants": {
         "required": [
           "id",
           "name",
