@@ -65,22 +65,18 @@ SFU HUB aggregates information from various capus resources and presents it in a
 ## REQUIREMENTS
 ### Calendar: 
 - Display events: a basic monthly calendar view with events from SFU and student clubs 
-- Event details: when the user clicks on an event, display more info (name, date, time, location, etc) 
-- Basic filtering: A filter option for the clubs that saves to cookies or local storage 
 - Responsive design: ensure the calendar works across devices (phone, desktop, tablet) 
 
 ### Dining page 
--List dining options: display a list of all on-campus dining locations (cafes, restaurants, food trucks) 
--Basic info: each dining option should include essential details like name, type of food (vegan, fast food, nut-free, etc, price range) and location on campus  
--Reviews: show simple ratings or reviews (can be static for iteration 1, real user reviews can be implemented later) 
--Filtering: basic filter by food type (vegetarian, fast food, coffee shops, price range) 
--Sort by name, sort by food category, sort by location (near WMC, near university) 
+- List dining options: display a list of all on-campus dining locations (cafes, restaurants, food trucks) 
+- Basic info: each dining option should include essential details like name, hours of operation, menu link and location on campus  
+- Reviews: show simple ratings or reviews (can be static for iteration 1, real user reviews can be implemented later) 
+- Sort by location (near WMC, near university) 
 
 ### Resources page: 
-
--Categories of resources, with a selector option and all on one page both 
--Links to resources: each resource has a clickable link directing users to the appropriate website or contact info 
--Search/filter: a simple search bar or filter that allows users to find resources by categories (health, academics, mental health, safety, etc) 
+- Categories of resources, with a selector option and all on one page both 
+- Links to resources: each resource has a clickable link directing users to the appropriate website or contact info 
+- Search/filter: a simple search bar or filter that allows users to find resources by categories (health, academics, mental health, safety, etc) 
 
 ## USAGE
 
