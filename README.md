@@ -143,5 +143,5 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
    - **What it checks:**  
      - Mocked the `Calendar` component and verified that it is rendered with the placeholder text `Mocked Calendar`.
 
-### Test Results
+#### Test Results
 
