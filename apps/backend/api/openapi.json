@@ -22,6 +22,10 @@
     {
       "name": "Resources",
       "description": "Endpoints related to resources"
+    },
+    {
+      "name": "Dining",
+      "description": "Endpoints related to Dining options"
     }
   ],
   "paths": {
@@ -118,6 +122,51 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "AccessToken": []
+          }
+        ]
+      }
+    },
+    "/dining/restaurants": {
+      "get": {
+        "tags": [
+          "Dining"
+        ],
+        "summary": "Get all Restaurants",
+        "description": "Retrieve a list of all Restaurants",
+        "operationId": "getRestaurants",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dining"
                   }
                 }
               }

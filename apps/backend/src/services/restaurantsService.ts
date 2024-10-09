@@ -1,7 +1,7 @@
-import { type components } from '../@types/openapi';
+import { type components } from '../@types/openapi.js';
 import { prisma } from '../repositories/prisma.js';
 
-const getEvents = async (): Promise<components['schemas']['Dining'][]> => {
+const getRestaurants = async (): Promise<components['schemas']['Dining'][]> => {
     const dining = await prisma.dining.findMany({
         select: {
             name: true,
@@ -17,5 +17,5 @@ const getEvents = async (): Promise<components['schemas']['Dining'][]> => {
 };
 
 export default {
-    getEvents: getEvents,
+    getRestaurants: getRestaurants,
 };
