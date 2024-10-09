@@ -53,7 +53,7 @@ SFU HUB aggregates information from various capus resources and presents it in a
 - While the team already had good communication, more structured coordination like regular sync-ups, dependency tracking etc. would help avoid delays when one team is waiting on another’s progress.  
 
 
-## FATURES
+## FEATURES
 - Calendar
 - Dining Options
 - Resources
