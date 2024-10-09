@@ -7,23 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model event {
-  id String @id @unique @default(uuid())
-  allDay Boolean?
-  start DateTime
-  end DateTime
-  title String
-  url String?
-  color String?
-}
-
 model resources {
-  id          String @unique(map: "sqlite_autoindex_resources_1")
-  title       String @unique(map: "sqlite_autoindex_resources_2")
-  description String @unique(map: "sqlite_autoindex_resources_3")
-  link        String @unique(map: "sqlite_autoindex_resources_4")
-  category    String @unique(map: "sqlite_autoindex_resources_5")
-}
+  id          String @id
+  title       String
+  description String
+  link        String
+  category    String
 
 model dining {
   id          String   @id @default(uuid())
