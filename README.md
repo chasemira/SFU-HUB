@@ -67,32 +67,23 @@ SFU HUB aggregates information from various capus resources and presents it in a
 -Display events: a basic calendar view (monthly or weekly) with events from SFU and student clubs 
 -Event details: when the user clicks on an event, display more info (name, date, time, location, etc) 
 -Basic filtering: A filter option for the clubs that saves to cookies or local storage 
+-Responsive design: ensure the calendar works across devices (phone, desktop, tablet) 
 
-Responsive design: ensure the calendar works across devices (phone, desktop, tablet) 
+###Dining page 
+-List dining options: display a list of all on-campus dining locations (cafes, restaurants, food trucks) 
+-Basic info: each dining option should include essential details like name, type of food (vegan, fast food, nut-free, etc, price range) and location on campus  
+-Reviews: show simple ratings or reviews (can be static for iteration 1, real user reviews can be implemented later) 
+-Filtering: basic filter by food type (vegetarian, fast food, coffee shops, price range) 
+-Map/location: optionally include a basic link to Google Maps or sfu snap or sfu campus map showing the dining location 
+-Sort by name, sort by food category, sort by location (near WMC, near university) 
 
-Dining page 
+###Resources page: 
 
-List dining options: display a list of all on-campus dining locations (cafes, restaurants, food trucks) 
+-Categories of resources, maybe with a selector or all on one page 
 
-Basic info: each dining option should include essential details like name, type of food (vegan, fast food, nut-free, etc, price range) and location on campus  
+-Links to resources: each resource can have a clickable link directing users to the appropriate website or contact info 
 
-Reviews: show simple ratings or reviews (can be static for iteration 1, real user reviews can be implemented later) 
-
-Filtering: basic filter by food type (vegetarian, fast food, coffee shops, price range) 
-
-Map/location: optionally include a basic link to Google Maps or sfu snap or sfu campus map showing the dining location 
-
-Sort by name, sort by food category, sort by location (near WMC, near university) 
-
-Select pictures  
-
-Resources page: 
-
-Categories of resources, maybe with a selector or all on one page 
-
-Links to resources: each resource can have a clickable link directing users to the appropriate website or contact info 
-
-Search/filter: a simple search bar or filter that allows users to find resources by categories (health, academics, mental health, safety, etc) 
+-Search/filter: a simple search bar or filter that allows users to find resources by categories (health, academics, mental health, safety, etc) 
 
 ## USAGE
 
