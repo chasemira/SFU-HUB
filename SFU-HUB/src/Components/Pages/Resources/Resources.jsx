@@ -32,7 +32,7 @@ const Resources = () => {
     <div className="resources__container">
       <h1 className="resources__header">SFU Resources</h1>
 
-      <label htmlFor="searchBar">Search Resources:</label>
+      <h2 htmlFor="searchBar">Search Resources:</h2>
       <input
         type="text"
         id="searchBar"
@@ -42,7 +42,7 @@ const Resources = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <label htmlFor="categoryFilter">Select Category:</label>
+      <h2 htmlFor="categoryFilter">Select Category:</h2>
       <select
         id="categoryFilter"
         className="resources__category-filter"
@@ -60,9 +60,9 @@ const Resources = () => {
         {filteredResources.length > 0 ? (
           filteredResources.map((resource) => (
             <li key={resource.name} className="resources__item" data-category={resource.category}>
-              <a href={resource.link} target="_blank" rel="noopener noreferrer">
+              <label><a href={resource.link} target="_blank" rel="noopener noreferrer">
                 {resource.name}
-              </a>
+              </a></label>
             </li>
           ))
         ) : (
