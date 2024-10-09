@@ -124,6 +124,8 @@ The manual testing for the resources page was successful, with all test cases pa
    **PASS**
 
 ### Test Cases for Home and Calendar Components 
+![image](https://media.github.sfu.ca/user/3150/files/e5634b20-ca88-41db-bf0b-2e8c03f6d884)
+
 Implemented unit tests for the **Home Component** using **React Testing Library** and **Jest**. The tests cover rendering and verifying essential sections of the `Home` component, such as the **hero section**, **image grid**, and the **calendar section**.
 
 1. **Hero Section Rendering**  
