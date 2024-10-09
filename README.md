@@ -76,7 +76,6 @@ Run Dev to start and visit the localhost. Follow the steps as shown in the video
 ## TESTS
 
 ### Test Cases for Resources Component
-The test cases for the `Resources` component along with the results of each test.
 
 1. Search Functionality: 
    Steps: Search for "Health." 
