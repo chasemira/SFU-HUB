@@ -65,6 +65,7 @@ SFU HUB aggregates information from various capus resources and presents it in a
 ## REQUIREMENTS
 ### Calendar: 
 - Display events: a basic monthly calendar view with events from SFU and student clubs 
+- Calendar can switch into monthly, weekly and daily views 
 - Responsive design: ensure the calendar works across devices (phone, desktop, tablet) 
 
 ### Dining page 
