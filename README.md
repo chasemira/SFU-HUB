@@ -67,7 +67,9 @@ SFU HUB aggregates information from various capus resources and presents it in a
 ## USAGE
 
 Run Dev to start and visit the localhost. Follow the steps as shown in the video below.
-![video](https://media.github.sfu.ca/user/3090/files/5c78afee-4d88-4774-8dcc-42f0f510c780)
+https://media.github.sfu.ca/user/3090/files/b7f297b7-e609-40b3-b791-9258b27812c5
+
+
 
 ## FEATURE TRACKING
 ![image](https://media.github.sfu.ca/user/3090/files/a6237c7e-5cff-41cd-9aab-77c83984bdc7)
