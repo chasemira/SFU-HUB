@@ -123,12 +123,9 @@ The manual testing for the resources page was successful, with all test cases pa
    Exoected Results: No results
    Actual Result: No dining option is displayed. Should consider adding an 'Oops..' message for the next iteration.
    **PASS**
-   
-## Testing
-
-We implemented unit tests for the **Home Component** using **React Testing Library** and **Jest**. The tests cover rendering and verifying essential sections of the `Home` component, such as the **hero section**, **image grid**, and the **calendar section**.
 
 ### Test Cases for Home and Calendar Components 
+Implemented unit tests for the **Home Component** using **React Testing Library** and **Jest**. The tests cover rendering and verifying essential sections of the `Home` component, such as the **hero section**, **image grid**, and the **calendar section**.
 
 1. **Hero Section Rendering**  
    - **Test:** Ensure that the hero section renders the correct title and text.  
