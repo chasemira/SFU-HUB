@@ -28,6 +28,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/dining/restaurants": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get all Restaurants
+         * @description Retrieve a list of all Restaurants
+         */
+        get: operations["getRestaurants"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/resources": {
         parameters: {
             query?: never;
@@ -85,6 +105,26 @@ export interface components {
             link: string;
             /** @description Category of the resource */
             category: string;
+        };
+        Restaurants: {
+            /** @description Unique identifier */
+            id: string;
+            /** @description Name of the dining option */
+            name: string;
+            /** @description URL to an image of the restaurant */
+            image?: string;
+            /** @description Address of the dining location */
+            address: string;
+            /** @description Contact information */
+            contact: string;
+            /** @description Description of the dining option */
+            description: string;
+            /** @description Website URL */
+            website: string;
+            /** @description Operating hours */
+            hours: string;
+            /** @description URL to the menu image or page */
+            menu?: string;
         };
         Error: {
             /**
@@ -171,6 +211,36 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Event"][];
+                };
+            };
+            /** @description The request has failed. */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Error"];
+                    "application/problem+json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    getRestaurants: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful operation */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Restaurants"][];
                 };
             };
             /** @description The request has failed. */

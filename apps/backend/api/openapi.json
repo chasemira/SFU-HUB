@@ -22,6 +22,10 @@
     {
       "name": "Resources",
       "description": "Endpoints related to resources"
+    },
+    {
+      "name": "Dining",
+      "description": "Endpoints related to Dining options"
     }
   ],
   "paths": {
@@ -118,6 +122,51 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "AccessToken": []
+          }
+        ]
+      }
+    },
+    "/dining/restaurants": {
+      "get": {
+        "tags": [
+          "Dining"
+        ],
+        "summary": "Get all Restaurants",
+        "description": "Retrieve a list of all Restaurants",
+        "operationId": "getRestaurants",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Restaurants"
                   }
                 }
               }
@@ -286,6 +335,55 @@
           "category": {
             "type": "string",
             "description": "Category of the resource"
+          }
+        }
+      },
+      "Restaurants": {
+        "required": [
+          "id",
+          "name",
+          "address",
+          "contact",
+          "description",
+          "website",
+          "hours"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the dining option"
+          },
+          "image": {
+            "type": "string",
+            "description": "URL to an image of the restaurant"
+          },
+          "address": {
+            "type": "string",
+            "description": "Address of the dining location"
+          },
+          "contact": {
+            "type": "string",
+            "description": "Contact information"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the dining option"
+          },
+          "website": {
+            "type": "string",
+            "description": "Website URL"
+          },
+          "hours": {
+            "type": "string",
+            "description": "Operating hours"
+          },
+          "menu": {
+            "type": "string",
+            "description": "URL to the menu image or page"
           }
         }
       },

@@ -14,3 +14,15 @@ model resources {
   link        String
   category    String
 }
+
+model dining {
+  id          String   @id @default(uuid())
+  name        String
+  image       String
+  address     String
+  contact     String?
+  description String?
+  website     String?
+  hours       String?
+  menu        String?
+}
