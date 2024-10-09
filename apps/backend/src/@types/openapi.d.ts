@@ -86,6 +86,26 @@ export interface components {
             /** @description Category of the resource */
             category: string;
         };
+        Dining: {
+            /** @description Unique identifier */
+            id: string;
+            /** @description Name of the dining option */
+            name: string;
+            /** @description URL to an image of the restaurant */
+            image?: string;
+            /** @description Address of the dining location */
+            address: string;
+            /** @description Contact information */
+            contact: string;
+            /** @description Description of the dining option */
+            description: string;
+            /** @description Website URL */
+            website: string;
+            /** @description Operating hours */
+            hours: string;
+            /** @description URL to the menu image or page */
+            menu?: string;
+        };
         Error: {
             /**
              * Format: int32

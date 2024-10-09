@@ -24,3 +24,15 @@ model resources {
   link        String @unique(map: "sqlite_autoindex_resources_4")
   category    String @unique(map: "sqlite_autoindex_resources_5")
 }
+
+model dining {
+  id          String   @id @default(uuid())
+  name        String
+  image       String
+  address     String
+  contact     String?
+  description String?
+  website     String?
+  hours       String?
+  menu        String?
+}

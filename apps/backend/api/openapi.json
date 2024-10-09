@@ -289,6 +289,55 @@
           }
         }
       },
+      "Dining": {
+        "required": [
+          "id",
+          "name",
+          "address",
+          "contact",
+          "description",
+          "website",
+          "hours"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the dining option"
+          },
+          "image": {
+            "type": "string",
+            "description": "URL to an image of the restaurant"
+          },
+          "address": {
+            "type": "string",
+            "description": "Address of the dining location"
+          },
+          "contact": {
+            "type": "string",
+            "description": "Contact information"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the dining option"
+          },
+          "website": {
+            "type": "string",
+            "description": "Website URL"
+          },
+          "hours": {
+            "type": "string",
+            "description": "Operating hours"
+          },
+          "menu": {
+            "type": "string",
+            "description": "URL to the menu image or page"
+          }
+        }
+      },
       "Error": {
         "type": "object",
         "required": [
