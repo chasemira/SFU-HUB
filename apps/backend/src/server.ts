@@ -11,6 +11,11 @@ import diningRoute from './routes/diningRoute.js';
 
 // import { jwtDecode } from "jwt-decode";
 
+if (!process.env['AUTHENTICATION']) {
+    console.log('Missing AUTHENTICATION env value');
+    process.exit();
+}
+
 const app = express();
 const port = process.env['PORT'] ?? 3005;
 
