@@ -29,12 +29,15 @@ body, html {
   z-index: 1; /* Behind the text */
 }
 
+.hero-text h1{
+  color: white;
+}
 .hero-text {
   position: relative;
   z-index: 2; /* Ensure text appears above the image */
-  background-color: rgba(168, 23, 45, 0.3);
+  background-color: rgb(204, 6, 51);
   color: white;
-  padding: 80px;
+  padding: 50px;
   text-align: center;
   border-radius: 8px;
 }
