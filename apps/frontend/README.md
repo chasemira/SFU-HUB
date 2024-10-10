@@ -1,8 +1,8 @@
-# React + Vite
+### Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run Frontend:
+1. Navigate to `apps/frontend`
+2. Run `npm run dev` to build and run
+3. Follow the steps as shown in the video below.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![SFU_HUB_USAGE](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU_HUB_thumbnail.png)](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU%20Hub.mp4)
