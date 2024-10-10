@@ -199,3 +199,12 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
  - Steps: GET the /calendar/events endpoint
  - Expected behavior: An array of event objects following the OpenAPI schema are returned
  - Result: The list of events is returned
+
+### Resources API Tests
+
+1. Get Resources - **Pass**
+ - Steps: GET /resources endpoint
+ - Expected behavior: n array of resource objects following the OpenAPI schema is returned
+ - Result: The list of resources is returned
+
+ 
