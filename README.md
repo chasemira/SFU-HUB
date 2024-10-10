@@ -163,7 +163,7 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 #### Test Results
 ![image](https://media.github.sfu.ca/user/3150/files/e5634b20-ca88-41db-bf0b-2e8c03f6d884)
 
-## Calendar API Tests
+### Calendar API Tests
 
 1. Creation Acceptance - **Pass**
  - Steps: POST a valid event, with all required values in the request object
