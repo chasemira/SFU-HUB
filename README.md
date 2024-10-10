@@ -91,7 +91,7 @@ Run Dev to start and visit the localhost. Follow the steps as shown in the video
 The frontend is using an instance of the backend, available at https://api.sfuhub.ca.
 
 To run the backend locally,
- 1. Nevigate to `apps/backend`
+ 1. Navigate to `apps/backend`
  2. Run `npm i`
  3. Run `npm run start` to build and run
  4. Available paths can be found at https://api.sfuhub.ca/api-docs (if it isn't down, sorry!) or [in our OpenAPI file](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/main/apps/backend/api/openapi.json).
