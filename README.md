@@ -208,7 +208,13 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 
 1. Get Resources - **Pass**
  - Steps: GET /resources endpoint
- - Expected behavior: n array of resource objects following the OpenAPI schema is returned
+ - Expected behavior: An array of resource objects following the OpenAPI schema is returned
  - Result: The list of resources is returned
 
+### Dining API Tests
+
+1. Get Restaurants- **Pass**
+- Steps: GET /dining/restaurants endpoint
+ - Expected behavior: An array of restaurants objects following the OpenAPI schema is returned
+ - Result: The list of restaurants is returned
  
