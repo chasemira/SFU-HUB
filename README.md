@@ -81,8 +81,22 @@ SFU HUB aggregates information from various capus resources and presents it in a
 
 ## USAGE
 
+### Frontend
+
 Run Dev to start and visit the localhost. Follow the steps as shown in the video below.
 [![SFU_HUB_USAGE](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU_HUB_thumbnail.png)](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU%20Hub.mp4)
+
+### Backend
+
+The frontend is using an instance of the backend, available at https://api.sfuhub.ca.
+
+To run the backend locally,
+ 1. Nevigate to `apps/backend`
+ 2. Run `npm i`
+ 3. Run `npm run start` to build and run
+ 4. Available paths can be found at https://api.sfuhub.ca/api-docs (if it isn't down, sorry!) or [in our OpenAPI file](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/main/apps/backend/api/openapi.json).
+
+The backend can also be build and ran using Docker with the provided Dockerfile.
 
 
 ## FEATURE TRACKING
