@@ -90,6 +90,8 @@ Run Dev to start and visit the localhost. Follow the steps as shown in the video
 
 ## TESTS
 
+Note: backend unit tests are planned for iteration 2.
+
 ### Test Cases for Resources Component
 
 1. Search Functionality: 
@@ -160,3 +162,25 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 
 #### Test Results
 ![image](https://media.github.sfu.ca/user/3150/files/e5634b20-ca88-41db-bf0b-2e8c03f6d884)
+
+## Calendar API Tests
+
+1. Creation Acceptance - **Pass**
+ - Steps: POST a valid event, with all required values in the request object
+ - Expected behavior: Valid calendar events can be created
+ - Result: Valid calendar event created
+
+2. Creation Rejection - **Pass**
+ - Steps: POST an invalid event, with `start`, a required property, missing
+ - Expected behavior: The request is rejected and a 400 Bad Request error is returned
+ - Result: The request is rejected
+
+3. Creation Authentication - **Pass**
+ - Steps: POST a valid event (folowing our OpenAPI schema), with invalid credentials
+ - Expected behavior: The request is rejected and a 401 Unauthorized is returned
+ - Result: The request is rejected with error 401
+
+4. Get Events - **Pass**
+ - Steps: GET the /calendar/events endpoint
+ - Expected behavior: An array of event objects following the OpenAPI schema are returned
+ - Result: The list of events is returned
