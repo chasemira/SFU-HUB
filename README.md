@@ -82,9 +82,7 @@ SFU HUB aggregates information from various capus resources and presents it in a
 ## USAGE
 
 Run Dev to start and visit the localhost. Follow the steps as shown in the video below.
-[![SFU_HUB_USAGE]([https://media.github.sfu.ca/user/3090/files/0206875b-7b54-446e-b5c3-6c91e7353f99)](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU_HUB_thumbnail.png)]([https://media.github.sfu.ca/user/3090/files/fa072ab1-3d2f-48c9-b348-1c3956f4d9f8](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU%20Hub.mp4
-))
-
+[![SFU_HUB_USAGE](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU_HUB_thumbnail.png)](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU%20Hub.mp4)
 
 
 ## FEATURE TRACKING
