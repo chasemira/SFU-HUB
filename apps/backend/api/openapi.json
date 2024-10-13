@@ -12,6 +12,14 @@
     {
       "url": "https://api.sfuhub.ca",
       "description": "Production"
+    },
+    {
+      "url": "https://staging.sfuhub.ca",
+      "description": "Staging"
+    },
+    {
+      "url": "http://localhost:3000",
+      "description": "Development"
     }
   ],
   "tags": [
