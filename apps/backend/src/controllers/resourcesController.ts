@@ -7,7 +7,7 @@ const getResources = async (
     res: Response,
 ): Promise<void> => {
     // Calling the service
-    const resources = await resourcesService.getEvents();
+    const resources = await resourcesService.getResources();
 
     res.status(200).json(resources);
 };
@@ -15,3 +15,4 @@ const getResources = async (
 export default {
     getResources: getResources,
 };
+

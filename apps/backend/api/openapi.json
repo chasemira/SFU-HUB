@@ -57,6 +57,15 @@
               "type": "string",
               "format": "date-time"
             }
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Filters to events with any of the provided tags, comma delimited",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -247,7 +256,8 @@
         "required": [
           "start",
           "end",
-          "title"
+          "title",
+          "tags"
         ],
         "properties": {
           "id": {
@@ -272,6 +282,12 @@
           },
           "color": {
             "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -280,7 +296,8 @@
           "id",
           "start",
           "end",
-          "title"
+          "title",
+          "tags"
         ],
         "properties": {
           "id": {
@@ -305,6 +322,12 @@
           },
           "color": {
             "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

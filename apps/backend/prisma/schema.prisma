@@ -15,6 +15,7 @@ model event {
   title String
   url String?
   color String?
+  tags String
 }
 
 model resources {
