@@ -112,9 +112,11 @@ export interface components {
             /** @description Name of the dining option */
             name: string;
             /** @description URL to an image of the restaurant */
-            image?: string;
+            image: string;
             /** @description Address of the dining location */
             address: string;
+            /** @description Location of the restaurant relative to sfu */
+            category: string;
             /** @description Contact information */
             contact: string;
             /** @description Description of the dining option */
@@ -124,7 +126,7 @@ export interface components {
             /** @description Operating hours */
             hours: string;
             /** @description URL to the menu image or page */
-            menu?: string;
+            menu: string;
         };
         Error: {
             /**
