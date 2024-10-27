@@ -1,5 +1,5 @@
 import {
-    describe, expect, it, vi, afterEach
+    describe, expect, it, afterEach
 } from 'vitest';
 import restaurantsService from "../../../src/services/restaurantsService.js";
 import sinon from "sinon";
