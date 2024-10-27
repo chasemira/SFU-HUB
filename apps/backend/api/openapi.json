@@ -26,6 +26,10 @@
     {
       "name": "Dining",
       "description": "Endpoints related to Dining options"
+    },
+    {
+      "name": "Transit",
+      "description": "Endpoints related to Transit options"
     }
   ],
   "paths": {
@@ -241,6 +245,51 @@
       }
     }
   },
+  "/transit": {
+      "get": {
+        "tags": [
+          "Transit"
+        ],
+        "summary": "Get all transit options",
+        "description": "Retrieve a list of all transit options",
+        "operationId": "getTransit",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Transit"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "AccessToken": []
+          }
+        ]
+      }
+    },
   "components": {
     "schemas": {
       "EventPost": {
@@ -386,6 +435,37 @@
           "menu": {
             "type": "string",
             "description": "URL to the menu image or page"
+          }
+        }
+      },
+      "Transit": {
+        "required": [
+          "feedEntityID",
+          "trip",
+          "stopTimeUpdates",
+          "vechile",
+          "timestamp"
+        ],
+        "properties": {
+          "feedEntityID": {
+            "type": "string",
+            "description": ""
+          },
+          "trip": {
+            "type": "string",
+            "description": ""
+          },
+          "stopTimeUpdates": {
+            "type": "string",
+            "description": ""
+          },
+          "vechile": {
+            "type": "string",
+            "description": ""
+          },
+          "timestamp": {
+            "type": "string",
+            "description": ""
           }
         }
       },
