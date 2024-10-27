@@ -342,11 +342,13 @@
         "required": [
           "id",
           "name",
+          "image",
           "address",
           "contact",
           "description",
           "website",
-          "hours"
+          "hours",
+          "menu"
         ],
         "properties": {
           "id": {

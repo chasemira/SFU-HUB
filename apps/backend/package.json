@@ -10,7 +10,8 @@
         "start": "node dist/server.js",
         "postinstall": "npm run generate:prisma",
         "generate:prisma": "prisma generate",
-        "generate:openapi": "openapi-typescript ./api/openapi.json -o ./src/@types/openapi.d.ts"
+        "generate:openapi": "openapi-typescript ./api/openapi.json -o ./src/@types/openapi.d.ts",
+        "test": "vitest"
     },
     "dependencies": {
         "@prisma/client": "^5.9.1",
@@ -37,6 +38,8 @@
         "eslint-plugin-import": "^2.29.1",
         "openapi-typescript": "^7.4.1",
         "prettier": "3.3.3",
-        "typescript": "^5.6.2"
+        "sinon": "^19.0.2",
+        "typescript": "^5.6.2",
+        "vitest": "^2.1.3"
     }
 }
