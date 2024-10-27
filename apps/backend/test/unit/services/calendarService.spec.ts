@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, afterEach } from 'vitest';
+import { describe, expect, it, afterEach } from 'vitest';
 import calendarService from '../../../src/services/calendarService.js';
 import sinon from 'sinon';
 import { prisma } from '../../../src/repositories/prisma.js';
