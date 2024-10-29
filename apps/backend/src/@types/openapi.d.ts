@@ -112,7 +112,7 @@ export interface components {
             /** @description Name of the dining option */
             name: string;
             /** @description URL to an image of the restaurant */
-            image?: string;
+            image: string;
             /** @description Address of the dining location */
             address: string;
             /** @description Contact information */
@@ -124,7 +124,25 @@ export interface components {
             /** @description Operating hours */
             hours: string;
             /** @description URL to the menu image or page */
-            menu?: string;
+            menu: string;
+        };
+        TransitStop: {
+            /** @description Unique identifier for the transit stop. */
+            stopNumber: string;
+            /** @description Name of the transit stop. */
+            stopName: string;
+            /** @description List of scheduled stops at this transit stop. */
+            stops: components["schemas"]["TransitRoute"][];
+        };
+        TransitRoute: {
+            /** @description Destination of the transit route. */
+            destination: string;
+            /** @description Name of the transit route. */
+            routeName: string;
+            /** @description Code of the transit route. */
+            routeCode: string;
+            /** @description Scheduled arrival time as a Unix timestamp. */
+            time: number;
         };
         Error: {
             /**

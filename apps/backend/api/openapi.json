@@ -261,7 +261,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Transit"
+                    "$ref": "#/components/schemas/TransitStop"
                   }
                 }
               }
@@ -438,34 +438,54 @@
           }
         }
       },
-      "Transit": {
+      "TransitStop": {
         "required": [
-          "feedEntityID",
-          "trip",
-          "stopTimeUpdates",
-          "vechile",
-          "timestamp"
+          "stopNumber",
+          "stopName",
+          "stops"
         ],
         "properties": {
-          "feedEntityID": {
+          "stopNumber": {
             "type": "string",
-            "description": ""
+            "description": "Unique identifier for the transit stop."
           },
-          "trip": {
+          "stopName": {
             "type": "string",
-            "description": ""
+            "description": "Name of the transit stop."
           },
-          "stopTimeUpdates": {
+          "stops": {
+            "type": "array",
+            "description": "List of scheduled stops at this transit stop.",
+            "items": {
+              "$ref": "#/components/schemas/TransitRoute"
+            }
+          }
+        }
+      },
+      "TransitRoute": {
+        "type": "object",
+        "required": [
+          "destination",
+          "routeName",
+          "routeCode",
+          "time"
+        ],
+        "properties": {
+          "destination": {
             "type": "string",
-            "description": ""
+            "description": "Destination of the transit route."
           },
-          "vechile": {
+          "routeName": {
             "type": "string",
-            "description": ""
+            "description": "Name of the transit route."
           },
-          "timestamp": {
+          "routeCode": {
             "type": "string",
-            "description": ""
+            "description": "Code of the transit route."
+          },
+          "time": {
+            "type": "integer",
+            "description": "Scheduled arrival time as a Unix timestamp."
           }
         }
       },
