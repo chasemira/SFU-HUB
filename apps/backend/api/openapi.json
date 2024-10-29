@@ -245,14 +245,34 @@
       }
     }
   },
-  "/transit": {
+  "/transit/stops": {
       "get": {
         "tags": [
           "Transit"
         ],
-        "summary": "Get all transit options",
-        "description": "Retrieve a list of all transit options",
-        "operationId": "getTransit",
+        "summary": "Get transit stops and schedules",
+        "description": "Retrieve a list of transit stops and the scheduled arrival times for each route.",
+        "operationId": "getTransitStops",
+        "parameters": [
+          {
+            "name": "stopNumber",
+            "in": "query",
+            "description": "Filter by stop number",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "routeCode",
+            "in": "query",
+            "description": "Filter by route code",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful operation",
