@@ -262,15 +262,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "routeCode",
-            "in": "query",
-            "description": "Filter by route code",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
