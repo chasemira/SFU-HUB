@@ -14,7 +14,7 @@ function Home() {
       <section className="hero">
         <div className="hero-image"></div> {/* Image container */}
         <div className="hero-text">
-          <h1>SFU HUB</h1>
+          <h1 >SFU HUB</h1>
           <p>Your central hub for all things SFU</p>
         </div>
       </section>
