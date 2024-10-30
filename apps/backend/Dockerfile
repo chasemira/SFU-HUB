@@ -4,7 +4,7 @@ EXPOSE 3000
 
 WORKDIR /app
 
-ADD . /app
+ADD package.json package-lock.json prisma /app/
 
 RUN npm ci
 

@@ -102,6 +102,7 @@ export interface components {
             title: string;
             url?: string;
             color?: string;
+            tags: string[];
         };
         Event: {
             id: string;
@@ -113,6 +114,7 @@ export interface components {
             title: string;
             url?: string;
             color?: string;
+            tags: string[];
         };
         Resource: {
             /** @description Unique identifier */
@@ -202,6 +204,8 @@ export interface operations {
                 start?: string;
                 /** @description Filters to events that end before this date */
                 end?: string;
+                /** @description Filters to events with any of the provided tags, comma delimited */
+                tags?: string;
             };
             header?: never;
             path?: never;

@@ -3,7 +3,7 @@ import type { OperationsRequest } from '../@types/helpers';
 import calendarService from '../services/calendarService.js';
 
 const getEvents = async (req: OperationsRequest<'getEvents'>, res: Response): Promise<void> => {
-    const events = await calendarService.getEvents(req.query.start, req.query.end);
+    const events = await calendarService.getEvents(req.query.tags, req.query.start, req.query.end);
     res.json(events);
 };
 

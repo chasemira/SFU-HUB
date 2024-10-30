@@ -17,3 +17,4 @@ const getResources = async (): Promise<components['schemas']['Resource'][]> => {
 export default {
     getResources: getResources,
 };
+

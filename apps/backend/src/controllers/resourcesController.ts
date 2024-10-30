@@ -15,3 +15,4 @@ const getResources = async (
 export default {
     getResources: getResources,
 };
+
