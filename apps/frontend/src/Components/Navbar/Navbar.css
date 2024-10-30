@@ -8,9 +8,16 @@
   z-index: 10; /* Ensure the navbar is on top */
 }
 
+.navbar-link{
+  text-decoration: none;
+}
+.navbar-link:hover{
+  transform: scale(1.05); /* Slightly scale up the image */
+  transition: 500ms;
+}
 .navbar-title {
   color: white;
-  font-size: 24px;
+  font-size: 30px;
   margin: 0;
 }
 
