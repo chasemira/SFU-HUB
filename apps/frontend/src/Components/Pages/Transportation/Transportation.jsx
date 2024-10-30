@@ -84,6 +84,7 @@
 
 import React, { useState } from 'react';
 import './Transportation.css';
+import { Link } from 'react-router-dom';
 import parkingImage from './trans-pics/parking.jpg';
 import campusImage from './trans-pics/campus.jpg';
 
@@ -134,12 +135,16 @@ function Transportation() {
 
     <section className="image-grid">
       <div className="grid-item">
+      <Link to={'/parking'}>
         <div className="image1" style={{ backgroundImage: `url(${parkingImage})` }}></div>
         <div className="image-text">Parking</div>
+        </Link>
       </div>
       <div className="grid-item">
+      <Link to={'/route'}>
         <div className="image2" style={{ backgroundImage: `url(${campusImage})` }}></div>
         <div className="image-text">Campus to Campus</div>
+        </Link>
       </div>
     </section>
 

@@ -8,6 +8,8 @@ import Resources from './Components/Pages/Resources/Resources';
 import Transportation from './Components/Pages/Transportation/Transportation';
 import Blog from './Components/Pages/Blog/Blog';
 import Profile from './Components/Pages/Profile/Profile';
+import Parking from './Components/Pages/Transportation/Parking'
+import RoutePage from './Components/Pages/Transportation/Route'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +24,8 @@ function App() {
         <Route path="/transportation" element={<Transportation />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/parking" element={<Parking />} />
+        <Route path="/route" element={<RoutePage />} />
       </Routes>
     </Router>
   );
