@@ -1,125 +1,3 @@
-/* .transportation {
-    flex-direction: column;
-    padding: 30px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.trans_header{
-    margin-bottom: 40px;
-}
-
-.trans_content {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px; 
-}
-
-.campus_dropdown {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.campus_selector {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  } */
-/* 
-
-  .transportation {
-    flex-direction: column;
-    padding: 30px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.trans_header {
-    margin-bottom: 40px;
-}
-
-.trans_content {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.campus_dropdown {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.campus_selector {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.select_stop {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.stop_dropdown {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.stop_selector {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.bus_info {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.bus_info h2 {
-    margin-bottom: 20px;
-}
-
-.bus_info ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-}
-
-.bus_info li {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 30px;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-
-} */
-
-
 .transportation {
     flex-direction: column;
     padding: 30px;
@@ -131,6 +9,53 @@
     margin-bottom: 40px;
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding: 4rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid-item {
+    position: relative;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 400px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image1, .image2 {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item:hover .image1,
+.grid-item:hover .image2 {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.image1,
+.image2 {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image-text {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 8px;
+}
+
 .trans_content {
     width: 80%;
     display: flex;
@@ -138,7 +63,7 @@
     margin-bottom: 20px;
 }
 
-.campus_dropdown {
+.campus_dropdown, .stop_dropdown {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -146,31 +71,7 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.campus_selector {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.select_stop {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.stop_dropdown {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.stop_selector {
+.campus_selector, .stop_selector {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -220,4 +121,3 @@
     width: 100%;
     padding-left: 10px;
 }
-
