@@ -8,6 +8,8 @@ ADD . /app
 
 RUN npm ci
 
-RUN npm run generate:openapi
+RUN npm run generate:prisma
+
+RUN npm run build
 
 CMD ["npm","run","run"]
