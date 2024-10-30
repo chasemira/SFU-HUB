@@ -13,6 +13,7 @@ describe('services/calendarService.ts', () => {
         title: 'My Event',
         url: 'https://google.com',
         color: 'blue',
+        tags: ['tag1', 'tag2'],
     } satisfies components['schemas']['Event'];
 
     afterEach(() => {
@@ -26,6 +27,7 @@ describe('services/calendarService.ts', () => {
                     ...calendarEvent,
                     start: new Date('2024-10-12T16:34:55-07:00'),
                     end: new Date('2024-10-12T20:34:55-07:00'),
+                    tags: 'tag1,tag2',
                 },
             ]);
 
@@ -41,7 +43,8 @@ describe('services/calendarService.ts', () => {
                 {
                     ...calendarEvent,
                     start: new Date('2024-10-12T16:34:55-07:00'),
-                    end: new Date('2024-10-12T20:34:55-07:00'), 
+                    end: new Date('2024-10-12T20:34:55-07:00'),
+                    tags: 'tag1,tag2',
                 },
             );
 
