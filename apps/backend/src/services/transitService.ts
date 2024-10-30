@@ -1,7 +1,7 @@
 // import { fetch } from 'undici';
 // import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
-import { prisma } from '../repositories/prisma';
-import { DAY, DAYS, DAYS_IN_WEEK, msToSeconds } from '../util/constants';
+import { prisma } from '../repositories/prisma.js';
+import { DAY, DAYS, DAYS_IN_WEEK, msToSeconds } from '../util/constants.js';
 
 const getStatic = async (stops: string[]) => {
     const yesterday = new Date();

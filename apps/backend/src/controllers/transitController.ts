@@ -1,6 +1,6 @@
 import type { Response } from 'express';
 import type { OperationsRequest } from '../@types/helpers';
-import transitService from '../services/transitService';
+import transitService from '../services/transitService.js';
 
 const getTransit = async (
     req: OperationsRequest<'getTransit'>,
