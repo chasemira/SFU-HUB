@@ -4,6 +4,6 @@ import transitController from '../controllers/transitController.js';
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.get('/transit', transitController.getTransit);
+router.get('/transit/stops', transitController.getTransit);
 
 export default router;
