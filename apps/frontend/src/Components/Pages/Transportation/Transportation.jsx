@@ -1,7 +1,91 @@
+// import React, { useState, useEffect } from 'react';
+// import './Transportation.css';
+
+// function Transportation() {
+//   const [campusData, setCampusData] = useState([]);
+//   const [stopData, setStopData] = useState([]);
+//   const [busData, setBusData] = useState([]);
+//   const [selectedCampus, setSelectedCampus] = useState('');
+//   const [selectedStop, setSelectedStop] = useState('');
+
+//   // Fetch campus data on component mount
+//   useEffect(() => {
+//     fetch('https://api.sfuhub.ca/transit')
+//       .then(response => response.json())
+//       .then(data => setCampusData(data))
+//       .catch(error => console.error('Error fetching campus data:', error));
+//   }, []);
+
+//   const handleCampusChange = (event) => {
+//     setSelectedCampus(event.target.value);
+//     setSelectedStop(''); // Reset selected stop
+
+//     // Fetch stops for selected campus
+//     fetch(`/api/campuses/${event.target.value}/stops`)
+//       .then(response => response.json())
+//       .then(data => setStopData(data))
+//       .catch(error => console.error('Error fetching stop data:', error));
+//   };
+
+//   const handleStopChange = (event) => {
+//     setSelectedStop(event.target.value);
+
+//     // Fetch buses for selected stop
+//     fetch(`/api/stops/${event.target.value}/buses`)
+//       .then(response => response.json())
+//       .then(data => setBusData(data))
+//       .catch(error => console.error('Error fetching bus data:', error));
+//   };
+
+//   return (
+//     <div className='transportation'>
+//       <h1 className='trans_header'>Transportation</h1>
+//       <div className='trans_content'>
+//         <h2>Select SFU Campus</h2>
+//         <div className='campus_dropdown'>
+//           <select className="campus_selector" onChange={handleCampusChange}>
+//             <option value="">Select Campus</option>
+//             {campusData.map((campus) => (
+//               <option key={campus.id} value={campus.id}>{campus.name}</option>
+//             ))}
+//           </select>
+//         </div>
+//       </div>
+//       <div className='select_stop'>
+//         <h2>Bus Stop</h2>
+//         <div className='stop_dropdown'>
+//           <select
+//             className="stop_selector"
+//             onChange={handleStopChange}
+//             disabled={!selectedCampus}
+//           >
+//             <option value="">Select Stop</option>
+//             {selectedCampus && stopData.map((stop) => (
+//               <option key={stop.stopNumber} value={stop.stopNumber}>{stop.stopName}</option>
+//             ))}
+//           </select>
+//         </div>
+//       </div>
+//       <div className='bus_info'>
+//         <h2>Bus Information</h2>
+//         <ul>
+//           {selectedStop && busData.map((bus, index) => (
+//             <li key={index}>
+//               <strong>Route:</strong> {bus.routeName} (<strong>{bus.routeCode}</strong>) - <strong>Time:</strong> {new Date(bus.time * 1000).toLocaleTimeString()}
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Transportation;
+
 import React, { useState } from 'react';
 import './Transportation.css';
 import parkingImage from './trans-pics/parking.jpg';
-import campus from './trans-pics/campus.jpg';
+import campusImage from './trans-pics/campus.jpg';
 
 const busStopsData = {
   Burnaby: [
@@ -48,17 +132,17 @@ function Transportation() {
     <div className='transportation'>
       <h1 className='trans_header'>Transportation</h1>
 
-      {/* Image grid for parking and campus-to-campus options */}
-      <section className="image-grid">
-        <div className="grid-item">
-          <div className="image1" style={{ backgroundImage: `url(${parkingImage})` }}></div>
-          <div className="image-text">Parking</div>
-        </div>
-        <div className="grid-item">
-          <div className="image2" style={{ backgroundImage: `url(${campus})` }}></div>
-          <div className="image-text">Campus to Campus</div>
-        </div>
-      </section>
+    <section className="image-grid">
+      <div className="grid-item">
+        <div className="image1" style={{ backgroundImage: `url(${parkingImage})` }}></div>
+        <div className="image-text">Parking</div>
+      </div>
+      <div className="grid-item">
+        <div className="image2" style={{ backgroundImage: `url(${CampusImage})` }}></div>
+        <div className="image-text">Campus to Campus</div>
+      </div>
+    </section>
+
 
       <div className='trans_content'>
         <h2>Select SFU Campus</h2>
@@ -71,7 +155,6 @@ function Transportation() {
           </select>
         </div>
       </div>
-
       <div className='select_stop'>
         <h2>Bus Stop</h2>
         <div className='stop_dropdown'>
@@ -87,7 +170,6 @@ function Transportation() {
           </select>
         </div>
       </div>
-
       <div className='bus_info'>
         <h2>Bus Information</h2>
         <ul>
