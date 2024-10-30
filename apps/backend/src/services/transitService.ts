@@ -55,20 +55,19 @@ const getStatic = async (stops: string[]) => {
         ...item,
         stops: item.stops
             .filter(
-                (item) =>
-                    item.trip[DAYS[todayWeekday]] === true ||
-                    item.trip[DAYS[yesterdayWeekday]] === true,
+                (item2) => item2.trip[DAYS[todayWeekday]] === true
+                    || item2.trip[DAYS[yesterdayWeekday]] === true,
             )
             .map(({ time, trip: { ...trip } }) => {
                 const date = new Date(midnight);
                 date.setSeconds(time);
 
-                const stops = [];
+                const stopsToAdd = [];
 
                 // this is so that we can have trips that are at > 24:00:00, useful if its 1am
 
                 if (trip[DAYS[yesterdayWeekday]]) {
-                    stops.push({
+                    stopsToAdd.push({
                         destination: trip.destination,
                         routeName: trip.routeName,
                         routeCode: trip.routeCode,
@@ -77,7 +76,7 @@ const getStatic = async (stops: string[]) => {
                 }
 
                 if (trip[DAYS[todayWeekday]]) {
-                    stops.push({
+                    stopsToAdd.push({
                         destination: trip.destination,
                         routeName: trip.routeName,
                         routeCode: trip.routeCode,
@@ -85,10 +84,10 @@ const getStatic = async (stops: string[]) => {
                     });
                 }
 
-                return stops;
+                return stopsToAdd;
             })
             .flat()
-            .filter((item) => item.time >= msToSeconds(Date.now()))
+            .filter((item2) => item2.time >= msToSeconds(Date.now()))
             .sort((item1, item2) => item1.time - item2.time),
     }));
 };
@@ -168,5 +167,5 @@ const getTransit = async (stops: string[]) => {
 };
 
 export default {
-    getTransit,
+    getTransit: getTransit,
 };

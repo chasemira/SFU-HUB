@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import csv from 'csv-parser';
 import stripBom from 'strip-bom-stream';
 import fs from 'node:fs';
@@ -154,10 +155,9 @@ fs.createReadStream('data/stop_times.csv')
             .map((stopTime) => {
                 const timeComponents = stopTime.arrival_time.trim().split(':');
 
-                const time =
-                    Number(timeComponents[0]) * 3600 +
-                    Number(timeComponents[1]) * 60 +
-                    Number(timeComponents[2]);
+                const time = Number(timeComponents[0]) * 3600
+                    + Number(timeComponents[1]) * 60
+                    + Number(timeComponents[2]);
                 return {
                     tripId: stopTime.trip_id,
                     time: time,
@@ -184,10 +184,9 @@ fs.createReadStream('data/stop_times.csv')
                 ...entry,
                 destination:
                     directionNamesExceptions.find(
-                        (directionName) =>
-                            entry.direction === directionName.direction_id &&
-                            (directionName.route_name === entry.routeCode ||
-                                Number(directionName.route_name) === Number(entry.routeCode)),
+                        (directionName) => entry.direction === directionName.direction_id
+                            && (directionName.route_name === entry.routeCode
+                                || Number(directionName.route_name) === Number(entry.routeCode)),
                     )?.direction_name ?? 'Unknown',
             }))
             .map((entry) => ({
@@ -233,7 +232,8 @@ fs.createReadStream('data/stop_times.csv')
         console.log('Writing to DB');
 
         // const promises = [];
-        for (const key in final) {
+        // eslint-disable-next-line no-restricted-syntax
+        for (const key of Object.keys(final)) {
             const [stopId, stopNumber, stopName] = key.split('😀') as string[];
             const stoppings = final[key]!;
             await prisma.bus_stops.create({

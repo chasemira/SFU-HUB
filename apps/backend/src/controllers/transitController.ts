@@ -11,5 +11,5 @@ const getTransit = async (
 };
 
 export default {
-    getTransit,
+    getTransit: getTransit,
 };
