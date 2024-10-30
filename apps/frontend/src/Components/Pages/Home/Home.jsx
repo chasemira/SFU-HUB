@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Calendar from "./calendar";
 import './Home.css';
 import blogImage from './home-pics/blog.jpg';
@@ -21,28 +22,28 @@ function Home() {
       {/* image grid */}
       <section className="image-grid">
         <div className="grid-item">
-          <a href="#page1">
-          <div className="image1" style={{ backgroundImage: `url(${diningImage})` }}></div>
-          <div className="image-text">DINING</div>
-          </a>
+          <Link to="/dining">
+            <div className="image1" style={{ backgroundImage: `url(${diningImage})` }}></div>
+            <div className="image-text">DINING</div>
+          </Link>
         </div>
         <div className="grid-item">
-          <a href="#page2">
-          <div className="image2" style={{ backgroundImage: `url(${resourcesImage})` }}></div>
-          <div className="image-text">RESOURCES</div>
-          </a>
+          <Link to="/resources">
+            <div className="image2" style={{ backgroundImage: `url(${resourcesImage})` }}></div>
+            <div className="image-text">RESOURCES</div>
+          </Link>
         </div>
         <div className="grid-item">
-          <a href="#page3">
-          <div className="image3" style={{ backgroundImage: `url(${transportationImage})` }}></div>
-          <div className="image-text">TRANSPORTATION</div>
-          </a>
+          <Link to="/transportation">
+            <div className="image3" style={{ backgroundImage: `url(${transportationImage})` }}></div>
+            <div className="image-text">TRANSPORTATION</div>
+          </Link>
         </div>
         <div className="grid-item">
-          <a href="#page4">
-          <div className="image4" style={{ backgroundImage: `url(${blogImage})` }}></div>
-          <div className="image-text">BLOGS</div>
-          </a>
+          <Link to="/blogs">
+            <div className="image4" style={{ backgroundImage: `url(${blogImage})` }}></div>
+            <div className="image-text">BLOGS</div>
+          </Link>
         </div>
       </section>
       
