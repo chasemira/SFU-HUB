@@ -243,22 +243,21 @@
           }
         ]
       }
-    }
-  },
-  "/transit/stops": {
+    },
+    "/transit": {
       "get": {
         "tags": [
           "Transit"
         ],
         "summary": "Get transit stops and schedules",
         "description": "Retrieve a list of transit stops and the scheduled arrival times for each route.",
-        "operationId": "getTransitStops",
+        "operationId": "getTransit",
         "parameters": [
           {
-            "name": "stopNumber",
+            "name": "stopNumbers",
             "in": "query",
-            "description": "Filter by stop number",
-            "required": false,
+            "description": "Filter by stop number, comma delimited list",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -300,7 +299,8 @@
           }
         ]
       }
-    },
+    }
+  },
   "components": {
     "schemas": {
       "EventPost": {
