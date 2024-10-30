@@ -31,7 +31,7 @@ describe('services/calendarService.ts', () => {
                 },
             ]);
 
-            const result = await calendarService.getEvents(undefined, undefined);
+            const result = await calendarService.getEvents(undefined, undefined, undefined);
 
             expect(result).deep.equal([calendarEvent]);
         });
