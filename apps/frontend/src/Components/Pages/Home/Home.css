@@ -35,15 +35,15 @@ body, html {
 .hero-text {
   position: relative;
   z-index: 2; /* Ensure text appears above the image */
-  background-color: rgb(204, 6, 51);
+  background-color: rgb(166, 25, 46, 0.8);
   color: white;
-  padding: 50px;
+  padding: 70px;
   text-align: center;
   border-radius: 8px;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 50px;
   margin: 0;
 }
 

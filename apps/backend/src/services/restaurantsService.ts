@@ -7,6 +7,7 @@ const getRestaurants = async (): Promise<components['schemas']['Restaurants'][]>
             name: true,
             address: true,
             contact: true,
+            category: true,
             description: true,
             website: true,
             hours: true,

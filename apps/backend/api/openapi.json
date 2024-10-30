@@ -26,6 +26,10 @@
     {
       "name": "Dining",
       "description": "Endpoints related to Dining options"
+    },
+    {
+      "name": "Transit",
+      "description": "Endpoints related to Transit options"
     }
   ],
   "paths": {
@@ -239,6 +243,62 @@
           }
         ]
       }
+    },
+    "/transit": {
+      "get": {
+        "tags": [
+          "Transit"
+        ],
+        "summary": "Get transit stops and schedules",
+        "description": "Retrieve a list of transit stops and the scheduled arrival times for each route.",
+        "operationId": "getTransit",
+        "parameters": [
+          {
+            "name": "stopNumbers",
+            "in": "query",
+            "description": "Filter by stop number, comma delimited list",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransitStop"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "AccessToken": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -345,6 +405,7 @@
           "image",
           "address",
           "contact",
+          "category",
           "description",
           "website",
           "hours",
@@ -367,6 +428,10 @@
             "type": "string",
             "description": "Address of the dining location"
           },
+          "category": {
+            "type": "string",
+            "description": "Location of the restaurant relative to sfu"
+          },
           "contact": {
             "type": "string",
             "description": "Contact information"
@@ -386,6 +451,57 @@
           "menu": {
             "type": "string",
             "description": "URL to the menu image or page"
+          }
+        }
+      },
+      "TransitStop": {
+        "required": [
+          "stopNumber",
+          "stopName",
+          "stops"
+        ],
+        "properties": {
+          "stopNumber": {
+            "type": "string",
+            "description": "Unique identifier for the transit stop."
+          },
+          "stopName": {
+            "type": "string",
+            "description": "Name of the transit stop."
+          },
+          "stops": {
+            "type": "array",
+            "description": "List of scheduled stops at this transit stop.",
+            "items": {
+              "$ref": "#/components/schemas/TransitRoute"
+            }
+          }
+        }
+      },
+      "TransitRoute": {
+        "type": "object",
+        "required": [
+          "destination",
+          "routeName",
+          "routeCode",
+          "time"
+        ],
+        "properties": {
+          "destination": {
+            "type": "string",
+            "description": "Destination of the transit route."
+          },
+          "routeName": {
+            "type": "string",
+            "description": "Name of the transit route."
+          },
+          "routeCode": {
+            "type": "string",
+            "description": "Code of the transit route."
+          },
+          "time": {
+            "type": "integer",
+            "description": "Scheduled arrival time as a Unix timestamp."
           }
         }
       },

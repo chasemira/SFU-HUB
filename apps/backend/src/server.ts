@@ -8,6 +8,7 @@ import * as OpenApiValidator from 'express-openapi-validator';
 import resourcesRoute from './routes/resourcesRoute.js';
 import calendarRoute from './routes/calendarRoute.js';
 import diningRoute from './routes/diningRoute.js';
+import transitRoute from './routes/transitRoute.js';
 
 // import { jwtDecode } from "jwt-decode";
 
@@ -46,6 +47,7 @@ app.use(
 app.use('/calendar', calendarRoute);
 app.use('/resources', resourcesRoute);
 app.use('/dining', diningRoute);
+app.use('/transit', transitRoute);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use(((err, _req, res, _next) => {

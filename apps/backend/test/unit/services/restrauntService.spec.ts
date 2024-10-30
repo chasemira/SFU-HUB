@@ -12,6 +12,7 @@ describe("services/restaurantService.ts", () => {
     name: "TestName",
     image: "https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFieSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D",
     address: "8888 University Dr W, Burnaby, BC V5A 1S6",
+    category: "Univercity",
     contact: "911",
     description: "Descript description",
     website: "https://www.sfu.ca",
