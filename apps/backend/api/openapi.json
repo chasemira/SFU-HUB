@@ -405,6 +405,7 @@
           "image",
           "address",
           "contact",
+          "category",
           "description",
           "website",
           "hours",
@@ -426,6 +427,10 @@
           "address": {
             "type": "string",
             "description": "Address of the dining location"
+          },
+          "category": {
+            "type": "string",
+            "description": "Location of the restaurant relative to sfu"
           },
           "contact": {
             "type": "string",

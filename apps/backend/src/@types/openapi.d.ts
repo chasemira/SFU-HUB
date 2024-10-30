@@ -115,6 +115,8 @@ export interface components {
             image: string;
             /** @description Address of the dining location */
             address: string;
+            /** @description Location of the restaurant relative to sfu */
+            category: string;
             /** @description Contact information */
             contact: string;
             /** @description Description of the dining option */

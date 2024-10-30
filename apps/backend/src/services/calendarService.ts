@@ -35,16 +35,16 @@ const getEvents = async (
 const postEvent = async (
     event: OperationsRequest<'postEvent'>['body'],
 ): Promise<components['schemas']['Event']> => {
-    const { allDay, url, color, ...cratedEvent } = await prisma.event.create({
+    const { allDay, url, color, ...createdEvent } = await prisma.event.create({
         data: {
             ...event,
         },
     });
 
     return {
-        ...cratedEvent,
-        start: cratedEvent.start.toISOString(),
-        end: cratedEvent.end.toISOString(),
+        ...createdEvent,
+        start: createdEvent.start.toISOString(),
+        end: createdEvent.end.toISOString(),
         ...(allDay != null ? { allDay: allDay } : {}),
         ...(url != null ? { url: url } : {}),
         ...(color != null ? { color: color } : {}),
