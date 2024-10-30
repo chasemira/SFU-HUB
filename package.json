@@ -1,9 +1,5 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-    "vite": "^5.4.10"
-=======
     "react-router-dom": "^6.27.0"
->>>>>>> 23821e7ba0a7ebbed148a31b8879e94a913630a3
   }
 }

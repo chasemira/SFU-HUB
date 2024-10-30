@@ -138,7 +138,7 @@ function Transportation() {
         <div className="image-text">Parking</div>
       </div>
       <div className="grid-item">
-        <div className="image2" style={{ backgroundImage: `url(${CampusImage})` }}></div>
+        <div className="image2" style={{ backgroundImage: `url(${campusImage})` }}></div>
         <div className="image-text">Campus to Campus</div>
       </div>
     </section>
