@@ -241,11 +241,19 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 
 ### Dining API Tests
 
-1. Get Restaurants- **Pass**
+1. Get Restaurants - **Pass**
 
 - Steps: GET /dining/restaurants endpoint
 - Expected behavior: An array of restaurants objects following the OpenAPI schema is returned
 - Result: The list of restaurants is returned
+
+### Transit API Tests
+
+1. Get Transit - **Pass**
+
+- Steps: GET /transit?stopNumbers=59314
+- Expected behavior: An array of bus stops objects (with stop times in an array within) following the OpenAPI schema is returned
+- Result: The expected result is returned
 
 ### API Unit Tests
 
