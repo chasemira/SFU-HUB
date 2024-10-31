@@ -46,6 +46,9 @@ SFU HUB aggregates information from various capus resources and presents it in a
 - Community
 - Transportation
 
+## Project Structure
+![image](https://media.github.sfu.ca/user/3089/files/0b483800-6938-4637-9f81-b56e6ded4f4c)
+
 ## REQUIREMENTS
 
 ### Calendar:
