@@ -82,7 +82,7 @@ To run the frontend locally:
 
 [![SFU_HUB_USAGE](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU_HUB_thumbnail.png)](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU%20Hub.mp4)
 
-The frontend can also be build and ran using Docker with the provided Dockerfile.
+The frontend can also be built and ran using Docker with the provided Dockerfile.
 
 ### Backend
 
@@ -95,7 +95,7 @@ To run the backend locally,
 3. Run `npm run start` to build and run
 4. Available paths can be found at https://api.sfuhub.ca/api-docs (if it isn't down, sorry!) or [in our OpenAPI file](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/main/apps/backend/api/openapi.json).
 
-The backend can also be build and ran using Docker with the provided Dockerfile.
+The backend can also be built and ran using Docker with the provided Dockerfile.
 
 ## FEATURE TRACKING
 
