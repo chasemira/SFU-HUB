@@ -11,6 +11,8 @@ const getRestaurants = async (): Promise<components['schemas']['Restaurants'][]>
             description: true,
             website: true,
             hours: true,
+            image: true,
+            menu: true,
         },
     });
 
