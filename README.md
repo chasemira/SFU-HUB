@@ -95,8 +95,8 @@ The backend can also be build and ran using Docker with the provided Dockerfile.
 
 ## FEATURE TRACKING
 
-![image](https://media.github.sfu.ca/user/3090/files/a6237c7e-5cff-41cd-9aab-77c83984bdc7)
-![image](https://media.github.sfu.ca/user/3090/files/0b05ca28-5ec8-4992-8d27-e82eb7f928c3)
+![image](https://media.github.sfu.ca/user/2234/files/ec005e88-2d61-4e68-8008-4a1f23ca83c4)
+![image](https://media.github.sfu.ca/user/2234/files/e09c71c1-c10d-4ae9-b727-f9955093d663)
 
 ## TESTS
 
