@@ -172,6 +172,19 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
      - Mocked the `Calendar` component and verified that it is rendered with the placeholder text `Mocked Calendar`.
 ### Testing for iteration 2 
 #### Parking 
+1. Default Category Selection- **Pass**
+
+- Steps: Load the component with the default category selection "All Categories."
+- Expected Outcome: All parking spots should be visible in the list.
+- Result: Pass - All parking spots are displayed correctly when "All Categories" is selected.e selected category's parking spots, hiding non-matching items.
+
+2. Map Display- **Pass**
+
+- Steps: Load the page and view the embedded map at the bottom.
+- Expected Outcome: The Google Maps iframe should load and display the SFU parking map.
+- Result: Pass - The SFU parking map displays within the iframe, loading and scaling correctly.
+
+
 #### Campus to Campus testing 
 1. Partial Selection (Missing Fields)- **Pass**
 
