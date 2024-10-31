@@ -242,3 +242,13 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 - Steps: GET /dining/restaurants endpoint
 - Expected behavior: An array of restaurants objects following the OpenAPI schema is returned
 - Result: The list of restaurants is returned
+
+### API Unit Tests
+
+![image](https://media.github.sfu.ca/user/3093/files/ff632bba-7e3c-4cd0-8a29-b878fe142fcb)
+
+We have implemented code-based unit tests to ensure the reliability and functionality of our program.
+- Allowing for continuous testing if code is modified
+- Ensures all critical functionalities are thoroughly validated
+- The tests allow for clear documentation of expected behaviors
+
