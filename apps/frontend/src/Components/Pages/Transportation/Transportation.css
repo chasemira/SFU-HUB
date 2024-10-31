@@ -24,13 +24,13 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    width: 400px;
+    width: 495px;
     text-align: center;
     cursor: pointer;
 }
 
 .image1, .image2 {
-    height: 230px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     opacity: 0.5;
@@ -57,13 +57,21 @@
 }
 
 .trans_content {
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.campus_dropdown, .stop_dropdown {
+.campus_dropdown {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stop_dropdown {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -81,10 +89,10 @@
 }
 
 .bus_info {
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .bus_info h2 {
