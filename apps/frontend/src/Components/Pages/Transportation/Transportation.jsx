@@ -58,20 +58,21 @@ const Transportation = () => {
   return (
     <div className='transportation'>
       <h1 className='trans_header'>Transportation</h1>
-      <section className="image-grid">
-        <div className="grid-item">
+      <section className="image-gridT">
+        <div className="grid-itemT">
           <Link to={'/parking'}>
             <div className="image1" style={{ backgroundImage: `url(${parkingImage})` }}></div>
-            <div className="image-text">Parking</div>
+            <div className="image-textT">Parking</div>
           </Link>
         </div>
-        <div className="grid-item">
+        <div className="grid-itemT">
           <Link to={'/route'}>
             <div className="image2" style={{ backgroundImage: `url(${campusImage})` }}></div>
-            <div className="image-text">Campus to Campus</div>
+            <div className="image-textT">Campus to Campus</div>
           </Link>
         </div>
       </section>
+
       <div className='trans_content'>
         <h2>Select SFU Campus</h2>
         <div className='campus_dropdown'>

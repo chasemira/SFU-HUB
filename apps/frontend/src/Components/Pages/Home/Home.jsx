@@ -20,29 +20,29 @@ function Home() {
       </section>
       
       {/* image grid */}
-      <section className="image-grid">
-        <div className="grid-item">
+      <section className="grid-image4">
+        <div className="grid-item4">
           <Link to="/dining">
             <div className="image1" style={{ backgroundImage: `url(${diningImage})` }}></div>
-            <div className="image-text">DINING</div>
+            <div className="image-text4">DINING</div>
           </Link>
         </div>
-        <div className="grid-item">
+        <div className="grid-item4">
           <Link to="/resources">
             <div className="image2" style={{ backgroundImage: `url(${resourcesImage})` }}></div>
-            <div className="image-text">RESOURCES</div>
+            <div className="image-text4">RESOURCES</div>
           </Link>
         </div>
-        <div className="grid-item">
+        <div className="grid-item4">
           <Link to="/transportation">
             <div className="image3" style={{ backgroundImage: `url(${transportationImage})` }}></div>
-            <div className="image-text">TRANSPORTATION</div>
+            <div className="image-text4">TRANSPORTATION</div>
           </Link>
         </div>
-        <div className="grid-item">
+        <div className="grid-item4">
           <Link to="/blogs">
             <div className="image4" style={{ backgroundImage: `url(${blogImage})` }}></div>
-            <div className="image-text">BLOGS</div>
+            <div className="image-text4">BLOGS</div>
           </Link>
         </div>
       </section>

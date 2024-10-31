@@ -9,16 +9,16 @@
     margin-bottom: 40px;
 }
 
-.image-grid {
+.image-gridT {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: 40px;
     padding: 4rem;
-    max-width: 100%;
+    max-width: 98.5%;
     margin: 0 auto;
 }
 
-.grid-item {
+.grid-itemT {
     position: relative;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
@@ -30,7 +30,7 @@
 }
 
 .image1, .image2 {
-    height: 240px;
+    height: 260px;
     background-size: cover;
     background-position: center;
     opacity: 0.5;
@@ -50,10 +50,18 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.image-text {
-    font-size: 18px;
-    color: #ffffff;
-    margin-top: 8px;
+.image-textT {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(166, 25, 46); /* Red footer banner */
+    color: white; /* White text */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    padding: 3px 10px;
+    box-sizing: border-box;
+    z-index: 2; /* Ensure the text is above the image */
 }
 
 .trans_content {

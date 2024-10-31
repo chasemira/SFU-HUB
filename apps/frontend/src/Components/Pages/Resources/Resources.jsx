@@ -17,7 +17,7 @@ const Resources = () => {
     fetchData();
   }, []);
 
-  const filteredResources = resources.filter((resource) => {
+    const filteredResources = resources.filter((resource) => {
     const matchesCategory = category === 'all' || resource.category.toLowerCase() === category.toLowerCase();
     const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
