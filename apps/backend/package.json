@@ -8,11 +8,10 @@
         "lint": "eslint \"src/**/*.ts\"",
         "start": "npm run build && npm run run",
         "run": "node dist/server.js",
-        "postinstall": "npm run generate:prisma",
         "generate:prisma": "prisma generate",
         "generate:openapi": "openapi-typescript ./api/openapi.json -o ./src/@types/openapi.d.ts",
         "generate:transit": "npm run build && node dist/generateTransitSchedule.js",
-        "test": "vitest"
+        "test": "vitest run"
     },
     "dependencies": {
         "@prisma/client": "^5.9.1",
