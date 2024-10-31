@@ -53,6 +53,7 @@ SFU HUB aggregates information from various capus resources and presents it in a
 - Display events: a basic monthly calendar view with events from SFU and student clubs
 - Calendar can switch into monthly, weekly and daily views
 - Responsive design: ensure the calendar works across devices (phone, desktop, tablet)
+- Filtering and sorting events (Iteration 2)
 
 ### Dining page
 
@@ -66,6 +67,13 @@ SFU HUB aggregates information from various capus resources and presents it in a
 - Categories of resources, with a selector option and all on one page both
 - Links to resources: each resource has a clickable link directing users to the appropriate website or contact info
 - Search/filter: a simple search bar or filter that allows users to find resources by categories (health, academics, mental health, safety, etc)
+
+### Transportation page (Iteration 2):
+
+- Show next bus times by bus stop
+- Select bus stop to get bus times for with a selector
+- Parking section with information on parking locations, rules (fees), etc
+- Transit options between campuses
 
 ## USAGE
 
