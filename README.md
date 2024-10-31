@@ -115,8 +115,6 @@ The backend can also be built and ran using Docker with the provided Dockerfile.
 
 ## TESTS
 
-Note: backend unit tests are planned for iteration 2.
-
 ### Test Cases for Resources Component
 
 1. Search Functionality:
@@ -151,7 +149,7 @@ The manual testing for the resources page was successful, with all test cases pa
 
 1. All Locations Displayes:
    Steps: Filter by 'All Locations'
-   Expected Result: Displays all the dining options available on campus ((only the ones put in the database currently).
+   Expected Result: Displays all the dining options available on campus (only the ones put in the database currently).
    Actual Result: Displays all the dining options available on campus.
    **PASS**
 2. Location Filtering:
@@ -258,7 +256,7 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 - Expected behavior: An array of restaurants objects following the OpenAPI schema is returned
 - Result: The list of restaurants is returned
 
-### Transit API Tests
+### Transit API Tests (Iteration 2)
 
 1. Get Transit - **Pass**
 
@@ -266,7 +264,7 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
 - Expected behavior: An array of bus stops objects (with stop times in an array within) following the OpenAPI schema is returned
 - Result: The expected result is returned
 
-### API Unit Tests
+### API Unit Tests (Iteration 2)
 
 ![image](https://media.github.sfu.ca/user/3093/files/ff632bba-7e3c-4cd0-8a29-b878fe142fcb)
 
