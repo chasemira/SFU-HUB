@@ -170,7 +170,20 @@ Implemented unit tests for the **Home Component** using **React Testing Library*
    - **Test:** Ensure that the Calendar component is rendered correctly.
    - **What it checks:**
      - Mocked the `Calendar` component and verified that it is rendered with the placeholder text `Mocked Calendar`.
+### Testing for iteration 2 
+#### Parking 
+#### Campus to Campus testing 
+1. Partial Selection (Missing Fields)- **Pass**
 
+- Steps: Select only the from field or to field.
+- Expected Outcome: An error message should appear, saying, "Please select both the starting and destination campuses."
+- Result: Error message appears correctly and no routes are listed.
+
+2. Transit Icon Display- **Pass**
+
+- Steps: Display routes that contain both "Bus" and "Expo Line" in the transit details.
+- Expected Outcome: Both FaTrain and FaBus icons should display for each route where applicable.
+- Result: Icons match the transit modes listed in route.transit. in this format 
 #### Test Results
 
 ![image](https://media.github.sfu.ca/user/3150/files/e5634b20-ca88-41db-bf0b-2e8c03f6d884)
