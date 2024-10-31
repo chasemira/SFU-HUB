@@ -82,8 +82,6 @@ To run the frontend locally:
 
 [![SFU_HUB_USAGE](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU_HUB_thumbnail.png)](https://github.sfu.ca/kaa80/SFU-HUB-CMPT276/blob/c095ae78ec471d07c97a98b9c16518640e7b9137/media/SFU%20Hub.mp4)
 
-The frontend can also be built and ran using Docker with the provided Dockerfile.
-
 ### Backend
 
 The frontend is using an instance of the backend, available at https://api.sfuhub.ca.
