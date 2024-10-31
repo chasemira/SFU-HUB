@@ -59,7 +59,6 @@ const Resources = () => {
                   {resource.title}
                 </a>
               </label>
-              <p>{resource.description}</p>
             </li>
           ))
         ) : (
