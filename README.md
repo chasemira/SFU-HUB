@@ -10,62 +10,32 @@ SFU HUB aggregates information from various capus resources and presents it in a
 
 ## RETROSPECTIVE
 
-### What Went Right
+### What went wrong in Iteration 1
 
-#### Team Collaboration:
+#### Time management 
 
-- We worked well as a team, with clear communication and regular check-ins.
-- Tasks were effectively split between frontend and backend members.
+- We encountered challenges in improving our time management since Iteration 1 due to conflicting schedules and midterm season. Although we made an effort to complete our tasks individually and keep each other updated at regular intervals, a considerable amount of work remained unfinished until the final deadline. This led to some compromises in deliverables and a few tasks left pending. Moving forward, we recognize the importance of more coordinated planning to address these issues.
 
-#### Technology Choice:
+### Actions Taken in Iteartion 2 
 
-- `React`, along with `FullCalendar`, provided the flexibility and functionality we needed.
-- Libraries such as `react-router-dom` and `react-icons` enhanced the user experience.
-- `TypeScript` and `Node.js` allowed us to build the backend quickly with the strongly typed language helping us build quicker and build with less errors.
+#### Responsibility Distribution
+- We clarified task ownership for each component and ensured each member knew who to approach for dependencies. This minimized time wasted on waiting and allowed us to complete dependent tasks sooner.
+#### Defined Check-in Points
+- We scheduled regular check-ins throughout the iteration, ensuring everyone was on the same page regarding deadlines. This helped us identify and resolve any lagging tasks early.
+#### Clear Communication Protocols 
+- We established clear communication protocols for notifying each other about any delays or challenges. This allowed us to address issues early rather than at the last minute.
 
-#### Version Control:
+### Action Items for Continuous Improvement
 
-- We successfully used `Git` and `GitHub` for version control, ensuring smooth collaboration with no conflicts.
-- The use of branches and issued helped keep our work organized and smooth distribution of tasks.
+#### Mid-Iteration Checkpoint
+- Schedule a formal mid-iteration checkpoint to evaluate our progress against goals and adjust timelines if necessary.
 
-#### Agile Adoption:
+#### Task Dependencies
+- Identify any tasks with dependencies early in the iteration so that team members can coordinate effectively and avoid delays.
 
-- The team used several agile methodologies and had productive sprints which improved our communication and progress tracking.
+#### Flexible Scheduling Options
+- Create a flexible scheduling system to accommodate varied availability, especially during exam seasons, while ensuring team alignment.
 
-### What Went Wrong
-
-#### Challenges with Git and Branch Management:
-
-- Early on, we experienced issues with branch management (e.g., switching branches, unresolved merge conflicts), which led to interruptions in the workflow.
-
-#### Overestimation of Capacity:
-
-- The team overestimated the amount of work that can be done in each iteration. As a result, some features had to be delayed while some were even cut.
-
-#### Unclear Feature Definitions:
-
-- Some features such as transportation schedules (iteration 2) and dining options, lacked detailed requirements which led to confusion and back and forth discussions between the teams.
-
-### Things to Improve
-
-#### Better Planning and Task Breakdown:
-
-- For future projects, we need a more detailed project plan and clearer task breakdowns from the start.
-- This includes setting clear expectations for each team member, specifying exactly what each task involves, and estimating how long each task will take.
-
-#### Time Management and Task Allocation:
-
-- Allocate more time for testing, bug fixing, and fine-tuning design elements.
-- Create time buffers for unforeseen delays and plan a final review or polishing phase to ensure project quality.
-
-#### More Frequent Testing:
-
-- For our future projects, we would implement automated tests are features are being developed. This would ensure that features are reliable and bug free before the project is released.
-- For the backend, having unit tests and integration test, especially built into a `CI pipeline`, would help us build quicker.
-
-#### Clearer Communication:
-
-- While the team already had good communication, more structured coordination like regular sync-ups, dependency tracking etc. would help avoid delays when one team is waiting on another’s progress.
 
 ## FEATURES
 
