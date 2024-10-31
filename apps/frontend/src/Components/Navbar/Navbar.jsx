@@ -15,7 +15,9 @@ function Navbar() {
     <>
       <IconContext.Provider value={{ color: 'white' }}>
         <div className='navbar'>
+          <Link to="/" className='navbar-link'>
         <h1 className='navbar-title'>SFU HUB</h1>
+        </Link>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>

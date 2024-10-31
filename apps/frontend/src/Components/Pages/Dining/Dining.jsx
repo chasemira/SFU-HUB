@@ -1,86 +1,87 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dining.css';
 
 function Dining() {
-  const [selectedLocation, setSelectedLocation] = useState(null); // For toggling buttons
-  const [selectedFilter, setSelectedFilter] = useState('All Locations'); // For dropdown filter
+  const [diningData, setDiningData] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [selectedFilter, setSelectedFilter] = useState('All Locations');
+  const apiURL = 'https://api.sfuhub.ca/dining/restaurants';
 
-  const locationDetails = [
-    { id: 'All Locations' },
-    { id: 'Cornerstone', name: 'Starbucks Cornerstone', rating: '4/5', hours: 'Monday-Friday: 7:30am-7:30pm Saturday/Sunday: 8am-6pm Holiday Hours: 8am-5pm', menuLink: '#' },
-    { id: 'Cornerstone', name: 'Subway', rating: '4/5', hours: 'Monday-Friday: 7:30am-7:30pm Saturday/Sunday: 8am-6pm Holiday Hours: 8am-5pm', menuLink: '#' },
-    { id: 'Cornerstone', name: 'Tim Hortons Cornerstone', rating: '4/5', hours: 'Monday-Friday: 7:30am-7:30pm Saturday/Sunday: 8am-6pm Holiday Hours: 8am-5pm', menuLink: '#' },
-    { id: 'WMC', name: 'Tim Hortons WMC', rating: '4/5', hours: 'Monday-Friday: 7:30am-7:30pm Saturday/Sunday: 8am-6pm Holiday Hours: 8am-5pm', menuLink: '#' },
-    { id: 'WMC', name: 'Starbucks WMC', rating: '4/5', hours: 'Monday-Friday: 7:30am-7:30pm Saturday/Sunday: 8am-6pm Holiday Hours: 8am-5pm', menuLink: '#' },
-    { id: 'SUB', name: 'Grill Master', rating: '4/5', hours: 'Monday-Friday: 7:30am-7:30pm Saturday/Sunday: 8am-6pm Holiday Hours: 8am-5pm', menuLink: '#' },
-    { id: 'Univercity' }
-  ];
+  useEffect(() => {
+    const pullJson = async () => {
+      const response = await fetch(apiURL);
+      const responseData = await response.json();
+      setDiningData(responseData);
+    };
+    pullJson();
+  }, []);
 
-  // Handle click to toggle details visibility
   const handleLocationClick = (locationName) => {
-    setSelectedLocation(selectedLocation === locationName ? null : locationName); // Toggle logic
+    setSelectedLocation(selectedLocation === locationName ? null : locationName);
   };
 
-  // Handle dropdown selection
   const handleDropdownChange = (event) => {
     setSelectedFilter(event.target.value);
-    setSelectedLocation(null); // Reset selected location when dropdown changes
+    setSelectedLocation(null);
   };
 
-  // Filter locations based on selected dropdown value
-  const filteredLocations = locationDetails.filter((location) =>
-    selectedFilter === 'All Locations' || location.id === selectedFilter
-  );
+  const filteredLocations = diningData.filter((location) => {
+    return selectedFilter === 'All Locations' || location.category === selectedFilter;
+  });
 
   return (
     <div className="dining">
       <h1 className="dining_header">Dining Options</h1>
-
       <div className="dining_content">
-      {/* Dropdown to filter locations */}
-      <h2>Select a Dining Option: </h2>
-      <div className="top-panel">
-        <select className="location_selector" onChange={handleDropdownChange}>
-          <option value="All Locations">All Locations</option>
-          <option value="Cornerstone">Cornerstone</option>
-          <option value="WMC">WMC</option>
-          <option value="SUB">SUB</option>
-          <option value="Univercity">Univercity</option>
-        </select>
+        <h2>Select a Dining Option:</h2>
+        <div className="top-panel">
+          <select className="location_selector" onChange={handleDropdownChange}>
+            <option value="All Locations">All Locations</option>
+            <option value="UniverCity">UniverCity</option>
+            <option value="West Mall">West Mall</option>
+            <option value="AQ">AQ</option>
+            <option value="Residence">Residence</option>
+          </select>
+        </div>
       </div>
-      </div>
-      
-        <div className="dining_main">
-          <div className="left-panel">
-            {filteredLocations.map((location, index) => (
-              location.name && (
-                <button
-                  key={index}
-                  className={`location-btn ${selectedLocation === location.name ? 'active' : ''}`}
-                  onClick={() => handleLocationClick(location.name)}
-                >
-                  <label>{location.name}</label>
-                </button>
-              )
-            ))}
-          </div>
-
-          <div className={`right-panel ${selectedLocation ? 'active' : ''}`}>
-            {selectedLocation && filteredLocations
+      <div className="dining_main">
+        <div className="left-panel">
+          {filteredLocations.map((location, index) => (
+            <button
+              key={index}
+              className={`location-btn ${selectedLocation === location.name ? 'active' : ''}`}
+              onClick={() => handleLocationClick(location.name)}
+            >
+              <label>{location.name}</label>
+            </button>
+          ))}
+        </div>
+        <div className={`right-panel ${selectedLocation ? 'active' : ''}`}>
+          {selectedLocation &&
+            filteredLocations
               .filter((location) => location.name === selectedLocation)
               .map((location, index) => (
                 <div key={index} className="location_details">
                   <h3>{location.name}</h3>
-                  <p>Rating: {location.rating}</p>
+                  <p>Address: {location.address}</p>
+                  <p>Contact: {location.contact}</p>
+                  <p>Category: {location.category}</p>
+                  <p>Description: {location.description}</p>
                   <p>Hours of Operation: {location.hours}</p>
                   <p>
-                    Menu Link: <a href={location.menuLink}>View Menu</a>
+                    Menu Link: <a href={location.menu} target="_blank" rel="noopener noreferrer">View Menu</a>
                   </p>
+                  {location.image && (
+                    <div
+                      className="location_image"
+                      style={{ backgroundImage: `url(${location.image})` }}
+                    />
+                  )}
                 </div>
               ))}
-          </div>
         </div>
       </div>
+    </div>
   );
 }
 

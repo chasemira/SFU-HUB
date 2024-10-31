@@ -35,15 +35,15 @@ body, html {
 .hero-text {
   position: relative;
   z-index: 2; /* Ensure text appears above the image */
-  background-color: rgb(204, 6, 51);
+  background-color: rgb(166, 25, 46, 0.8);
   color: white;
-  padding: 50px;
+  padding: 70px;
   text-align: center;
   border-radius: 8px;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 50px;
   margin: 0;
 }
 
@@ -53,16 +53,16 @@ body, html {
 }
 
 /* Image Grid */
-.image-grid {
+.grid-image4 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
+  grid-gap: 40px;
   padding: 4rem;
-  max-width: 98%;
+  max-width: 98.5%;
   margin: 0 auto;
 }
 
-.grid-item {
+.grid-item4 {
   position: relative; /* Ensure the text container is positioned relative to the image */
   background-color: #f4f4f4;
   border: 1px solid #ddd;
@@ -86,10 +86,10 @@ body, html {
   height: 250px;
 }
 
-.grid-item:hover .image1,
-.grid-item:hover .image2,
-.grid-item:hover .image3,
-.grid-item:hover .image4 {
+.grid-item4:hover .image1,
+.grid-item4:hover .image2,
+.grid-item4:hover .image3,
+.grid-item4:hover .image4 {
   transform: scale(1.05); /* Slightly scale up the image */
   opacity: 0.8; /* Increase opacity */
 }
@@ -98,7 +98,7 @@ body, html {
   transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
 }
 
-.image-text {
+.image-text4 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -112,11 +112,11 @@ body, html {
   z-index: 2; /* Ensure the text is above the image */
 }
 
-.grid-item a {
+.grid-item4 a {
   text-decoration: none;
   color: #333;
 }
 
-.grid-item a:hover .image-placeholder {
+.grid-item4 a:hover .image-placeholder {
   background-color: #bbb;
 }
