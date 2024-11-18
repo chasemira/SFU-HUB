@@ -29,17 +29,17 @@ export const NavBarData = [
         path:'/transportation',
         icon: <FaIcons.FaBus/>,
         cName: 'nav-transport'
-    },
-    {
-        title:'Blogs',
-        path:'/blogs',
-        icon: <FaIcons.FaBookReader/>,
-        cName: 'nav-blogs'
-    },
-    {
-        title:'Profile',
-        path:'/profile',
-        icon: <CgIcons.CgProfile/>,
-        cName: 'nav-prof'
     }
+    // {
+    //     title:'Blogs',
+    //     path:'/blogs',
+    //     icon: <FaIcons.FaBookReader/>,
+    //     cName: 'nav-blogs'
+    // },
+    // {
+    //     title:'Profile',
+    //     path:'/profile',
+    //     icon: <CgIcons.CgProfile/>,
+    //     cName: 'nav-prof'
+    // }
 ]
