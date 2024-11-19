@@ -48,6 +48,10 @@ const getStatic = async (stops: string[]) => {
                             },
                         },
                     },
+                    orderBy: {
+                        time: 'asc',
+                    },
+                    take: 10 * stops.length,
                 },
             },
         })
