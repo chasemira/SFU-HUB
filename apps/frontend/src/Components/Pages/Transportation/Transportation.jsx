@@ -6,53 +6,66 @@ import campusImage from './trans-pics/campus.jpg';
 
 const Transportation = () => {
   const [selectedCampus, setSelectedCampus] = useState('');
-  const [selectedStop, setSelectedStop] = useState('');
+  const [selectedStop, setSelectedStop] = useState([]);
   const [busData, setBusData] = useState({});
-  const [busStops, setBusStops] = useState({
+
+  const stops = {
     Burnaby: [
-      { value: 'Burnaby1', label: 'SFU Transportation Centre @ Bay 1' },
-      { value: 'Burnaby2', label: 'SFU Transportation Centre @ Bay 2' },
-      { value: 'Burnaby3', label: 'SFU Bus Exchange' },
+        { value: ['51863', '52806'], label: 'SFU Transportation Centre' },
+        { value: ['51861', '53096', '52807', '60662'], label: 'SFU Transit Exchange' },
     ],
     Surrey: [
-      { value: 'Surrey1', label: 'Surrey Central Station @ Bay 13' },
-      { value: 'Surrey2', label: 'King George Station' },
+        { value: ['55210', '55836', '55612', '55713', '55714', '55738', '55070', '55070', '55441', '56406', '61035', '61036', '61787'], label: 'Surrey Central Station' },
+        { value: ['55210'], label: 'Surrey Central Station @ Bay 2' },
+        { value: ['55836'], label: 'Surrey Central Station @ Bay 3' },
+        { value: ['55612'], label: 'Surrey Central Station @ Bay 4' },
+        { value: ['55713'], label: 'Surrey Central Station @ Bay 5' },
+        { value: ['55714'], label: 'Surrey Central Station @ Bay 6' },
+        { value: ['55738'], label: 'Surrey Central Station @ Bay 7' },
+        { value: ['54993'], label: 'Surrey Central Station @ Bay 8' },
+        { value: ['55070'], label: 'Surrey Central Station @ Bay 9' },
+        { value: ['55441'], label: 'Surrey Central Station @ Bay 10' },
+        { value: ['56406'], label: 'Surrey Central Station @ Bay 11' },
+        { value: ['61035'], label: 'Surrey Central Station @ Bay 12' },
+        { value: ['61036'], label: 'Surrey Central Station @ Bay 13' },
+        { value: ['61787'], label: 'Surrey Central Station @ Bay 14' },
     ],
     Vancouver: [
-      { value: 'Vancouver1', label: 'Waterfront Station' },
-      { value: 'Vancouver2', label: 'Granville Station' },
+        { value: ['50035'], label: 'Waterfront Station @ Bay 3' },
+        { value: ['50852'], label: 'WB W Hastings St @ Richards St' },
+        { value: ['50189'], label: 'Southbound Richards St @ W Hastings St' },
+        { value: ['50034'], label: 'NB Granville St @ W Hastings St' },
     ],
-  });
-
-  const apiURL = 'https://api.sfuhub.ca/transit?stopNumbers=59314%2C61036';
-
-  useEffect(() => {
-    const fetchBusData = async () => {
-      const response = await fetch(apiURL);
-      const data = await response.json();
-      const formattedData = {};
-
-      data.forEach(stop => {
-        formattedData[stop.stopName] = stop.stops.map(bus => ({
-          routeName: bus.routeName,
-          routeCode: bus.routeCode,
-          time: new Date(bus.time * 1000).toLocaleTimeString(),
-        }));
-      });
-
-      setBusData(formattedData);
-    };
-
-    fetchBusData();
-  }, []);
+  };
 
   const handleCampusChange = (event) => {
     setSelectedCampus(event.target.value);
-    setSelectedStop('');
+    setSelectedStop([]);
   };
 
-  const handleStopChange = (event) => {
-    setSelectedStop(event.target.value);
+  const handleStopChange = async (event) => {
+    if (event.target.value === '') {
+        setSelectedStop([]);
+        return
+    }
+
+    const chosenStops = event.target.value.split(',');
+    const newStops = chosenStops.filter((stop) => !busData[stop]);
+    if (newStops.length !== 0) {
+      const response = await fetch(`https://api.sfuhub.ca/transit?stopNumbers=${newStops.join('%2C')}`);
+      const data = await response.json();
+      const newData = busData;
+
+      data.forEach(stop => {
+        stop.stops.length = Math.min(stop.stops.length, 5); 
+        newData[stop.stopNumber] = stop;
+      });
+
+      setBusData(newData);
+    }
+
+    setSelectedStop(chosenStops);
+
   };
 
   return (
@@ -93,25 +106,45 @@ const Transportation = () => {
             disabled={!selectedCampus}
           >
             <option value="">Select Stop</option>
-            {selectedCampus && busStops[selectedCampus].map((stop) => (
-              <option key={stop.value} value={stop.label}>{stop.label}</option>
+            {selectedCampus && stops[selectedCampus].map((stop) => (
+              <option key={stop.value} value={stop.value}>{stop.label}</option>
             ))}
           </select>
         </div>
       </div>
       <div className='bus_info'>
         <h2>Bus Information</h2>
-        <ul>
-          {selectedStop && busData[selectedStop] && busData[selectedStop].map((bus, index) => (
-            <li key={index} className='bus_item'>
-              <div className='bus_code'>{bus.routeCode}</div>
-              <div className='bus_details'>
-                <div className='bus_route'>{bus.routeName}</div>
-                <div className='bus_time'>{bus.time}</div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {
+            selectedStop.reduce((acc, stop) => busData[stop] != undefined && acc, true) && selectedStop.map((stop) => {
+                if (busData[stop] !== undefined) {
+                    return <>
+                        <h3>{busData[stop].stopName}</h3>
+                        <ul>
+                            {busData[stop].stops.map((bus, index) => (
+                                <li key={index} className='bus_item'>
+                                    <div className='bus_code'>{bus.routeCode}</div>
+                                    <div className='bus_details'>
+                                        <div className='bus_route'>{`to ${bus.destination}`}</div>
+                                        <div className='bus_time'>{new Date(bus.time * 1000).toLocaleTimeString()}</div>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </>;
+                }
+            })
+        //     <ul>
+        //     {busData[selectedStop] && busData[selectedStop].map((bus, index) => (
+        //       <li key={index} className='bus_item'>
+        //         <div className='bus_code'>{bus.routeCode}</div>
+        //         <div className='bus_details'>
+        //           <div className='bus_route'>{bus.routeName}</div>
+        //           <div className='bus_time'>{bus.time}</div>
+        //         </div>
+        //       </li>
+        //     ))}
+        //   </ul>
+        }
       </div>
     </div>
   );
